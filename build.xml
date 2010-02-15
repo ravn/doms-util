@@ -26,22 +26,58 @@
   -->
 
 <project name="domsutil" basedir=".">
+    <property file="build.properties"/>
+
     <target name="clean">
         <subant target="clean">
-            <fileset dir="modules" includes="**/build.xml"/>
+            <fileset dir="modules/webservice-common" includes="build.xml"/>
         </subant>
     </target>
 
     <target name="dist">
         <mkdir dir="dist"/>
         <subant target="jar">
-            <fileset dir="modules/**" includes="build.xml"/>
+            <fileset dir="modules/webservice-common" includes="build.xml"/>
         </subant>
-        <copy todir="dist">
-            <fileset dir="modules/**/dist/">
+        <zip file="dist/domsutil-${domsutil.version}.zip">
+            <fileset dir="modules/webservice-common/dist/">
                 <include name="*.jar"/>
             </fileset>
-        </copy>
+            <fileset dir="modules/webservice-common/">
+                <include name="lib/**/jars" />
+                <include name="lib/**/license" />
+            </fileset>
+            <fileset dir=".">
+                <include name="LICENSE"/>
+                <include name="NOTICE"/>
+                <include name="README"/>
+                <include name="lib/**/jars" />
+                <include name="lib/**/license" />
+            </fileset>
+        </zip>
+    </target>
+
+    <target name="src-dist">
+        <mkdir dir="dist"/>
+        <subant target="sourcezip">
+            <fileset dir="modules/webservice-common" includes="build.xml"/>
+        </subant>
+        <zip file="dist/domsutil-${domsutil.version}-src.zip">
+            <fileset dir="modules/webservice-common/dist/">
+                <include name="*-src.zip"/>
+            </fileset>
+            <fileset dir="modules/webservice-common/">
+                <include name="lib/**/jars" />
+                <include name="lib/**/license" />
+            </fileset>
+            <fileset dir=".">
+                <include name="LICENSE"/>
+                <include name="NOTICE"/>
+                <include name="README"/>
+                <include name="lib/**/jars" />
+                <include name="lib/**/license" />
+            </fileset>
+        </zip>
     </target>
 
 </project>
