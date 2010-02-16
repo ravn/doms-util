@@ -27,6 +27,10 @@
 
 <project name="domsutil" basedir=".">
     <property file="build.properties"/>
+    <property name="global.dir" value="${basedir}"/>
+
+    <import file="build/build-dist.xml"/>
+<!--
 
     <target name="clean">
         <subant target="clean">
@@ -67,17 +71,18 @@
                 <include name="*-src.zip"/>
             </fileset>
             <fileset dir="modules/webservice-common/">
-                <include name="lib/**/jars" />
-                <include name="lib/**/license" />
+                <include name="lib/**/jars/**" />
+                <include name="lib/**/license/**" />
             </fileset>
             <fileset dir=".">
                 <include name="LICENSE"/>
                 <include name="NOTICE"/>
                 <include name="README"/>
-                <include name="lib/**/jars" />
-                <include name="lib/**/license" />
+                <include name="lib/**/jars/**" />
+                <include name="lib/**/license/**" />
             </fileset>
         </zip>
     </target>
+-->
 
 </project>
