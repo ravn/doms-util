@@ -27,11 +27,9 @@
 
 package dk.statsbiblioteket.doms.webservices;
 
-import javax.xml.ws.WebServiceContext;
-import javax.xml.ws.Response;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.handler.MessageContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
 import java.io.IOException;
 
 
