@@ -28,26 +28,23 @@
 package dk.statsbiblioteket.doms.webservices;
 
 /**
- * Created by IntelliJ IDEA.
- * User: abr
- * Date: Feb 15, 2010
- * Time: 2:59:04 PM
- * To change this template use File | Settings | File Templates.
+ * Exception for trouble extracting credentials.
  */
 public class CredentialsException extends Exception {
-
-    public CredentialsException() {
-    }
-
+    /**
+     * Report exception extracting credentials.
+     * @param message Message generated.
+     */
     public CredentialsException(String message) {
         super(message);
     }
 
+    /**
+     * Report exception extracting credentials.
+     * @param message Message generated.
+     * @param cause The exception that caused the trouble.
+     */
     public CredentialsException(String message, Throwable cause) {
         super(message, cause);
-    }
-
-    public CredentialsException(Throwable cause) {
-        super(cause);
     }
 }

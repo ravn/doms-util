@@ -41,23 +41,35 @@ import java.util.Properties;
  */
 public class ConfigContextListener implements ServletContextListener {
 
+    /**
+     * Method that is called when conext is initialized. This method will add
+     * context parameters to the configuration collection. It will also remember
+     * the servlet context.
+     *
+     * @param sce The newly-initialized servlet context.
+     */
     public void contextInitialized(ServletContextEvent sce) {
         Properties props = new Properties();
-
         ServletContext servletContext = sce.getServletContext();
         Enumeration names = servletContext.getInitParameterNames();
+
         while (names.hasMoreElements()) {
             String name = (String) names.nextElement();
             String value = servletContext.getInitParameter(name);
             props.put(name, value);
         }
-        ConfigCollection.setContextConfig(props);
+
+        ConfigCollection.addContextConfig(props);
         ConfigCollection.setServletContext(servletContext);
     }
 
+    /**
+     * Method that is called when conext is destroyed. Note that configuration
+     * parameters are NOT removed from the context.
+     *
+     * @param sce The about-to-be-destroyed servlet context.
+     */
     public void contextDestroyed(ServletContextEvent sce) {
-        Properties props = new Properties();
-        ConfigCollection.setContextConfig(props);
     }
 
 }

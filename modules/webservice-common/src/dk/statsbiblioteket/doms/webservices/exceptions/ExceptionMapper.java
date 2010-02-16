@@ -39,140 +39,103 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by IntelliJ IDEA.
- * User: abr
- * Date: Jan 20, 2010
- * Time: 2:10:15 PM
- * To change this template use File | Settings | File Templates.
+ * Abstract superclass of mappers that map from one type of exception to
+ * another.
+ *
+ * @param <E1> Exception type to map to.
+ * @param <E2> Exception type to map from.
  */
-public abstract class  ExceptionMapper <E1 extends Exception,E2 extends Exception>{
-
+public abstract class ExceptionMapper<E1 extends Exception, E2 extends Exception> {
+    /**
+     * Map an exception of type E2 to an exception of type E1. Implementations
+     * should implement this method for each specific type of exception subtype
+     * of E2 they wish to map. Implementations are expected to be trivial
+     * one-liners, that simply wrap the given instance of E2 in an instance of a
+     * subtype of E1.
+     *
+     * @param ce Exception to map from.
+     * @return The exception to map to.
+     */
     public abstract E1 convert(E2 ce);
 
-    public final E1 convertMostApplicable(E2 ce){
-        Class<? extends Exception> ceclass = ce.getClass();
-        List<Class<?>> typearguments =
-                getTypeArguments(ExceptionMapper.class, getClass());
+    /**
+     * Given an exception of type E2, map it to an exception of type E1.
+     * This method will pick an implementation of <code>convert</code> that
+     * takes the specific type of E2 and use it to map the exception. If none
+     * are found, it will return the result of <code>convert(E2)</code>.
+     *
+     * @param ce The exception to map from.
+     * @return The result of mapping the exception.
+     * @throws RuntimeException If ce is not an instance of E2(!)
+     */
+    public final E1 convertMostApplicable(E2 ce) {
+        Class<? extends Exception> ceClass = ce.getClass();
+        List<Class<?>> typearguments = getTypeArguments(ExceptionMapper.class,
+                                                        getClass());
         Class<?> e1Class = typearguments.get(0);
         Class<?> e2Class = typearguments.get(1);
 
-        if (e2Class != null && !e2Class.isAssignableFrom(ceclass)){//We are trying to convert an kind exception this mapper was not made for
-            throw new RuntimeException("Tried to convert "+ceclass.toString()+" with a mapper for "+e2Class.toString());
+        //TODO: Can this check ever fail?
+        if (e2Class != null && !e2Class.isAssignableFrom(
+                ceClass)) {
+            //We are trying to convert an kind exception this mapper was not made for
+            //FIXME: Use proper exception
+            throw new RuntimeException("Tried to convert " + ceClass.toString()
+                    + " with a mapper for " + e2Class.toString());
         }
 
         try {
-            Method rightmethod = this.getClass().getMethod("convert", ceclass);
+            Method rightmethod = this.getClass().getMethod("convert", ceClass);
             Class<?> rightmethodreturnclass = rightmethod.getReturnType();
-            if (e1Class.isAssignableFrom(rightmethodreturnclass)){//This should check the viability of the cast below
+            if (e1Class.isAssignableFrom(
+                    rightmethodreturnclass)) {
+                //This should check the viability of the cast below
                 Object result = rightmethod.invoke(this, ce);
                 return (E1) result;
-            }else {
-                throw new NoSuchMethodException("No method found matching the return type");
+            } else {
+                //Note: This exception is caught by the control flow below.
+                throw new NoSuchMethodException(
+                        "Convert('" + ceClass + "') returns '"
+                                + rightmethodreturnclass + "' not '" + e2Class
+                                + "'. Falling back to default conversion.");
             }
-
-        } catch (Exception e){
+        } catch (Exception e) {
             //TODO log e
-
-            //This cast is protected by the e2Class if above.
-            return convert((E2) ce);
-        }
-    }
-
-    
-/*...........................................................................*/
-/*
-    private static Method getBestMatch(Class<?> clazz, String name, Class<?> returnclass, Class<?>... parameters){
-        Method[] methods = clazz.getMethods();
-        for (Method method: methods){
-            if (method.getName().equals(name)){
-                Class<?> returnclassformethod =
-                        getClass(method.getGenericReturnType());
-                int returndistance =
-                        castDistance(returnclass, returnclassformethod);
-                //TODO look into the method listss.....
-
-            }
-        }
-        return null;
-        
-    }
-
-    private static <Super, Sub extends Super> int castDistance(Class<Super> superclass, Class<Sub> subclass){
-        int distance = 0;
-        if (!superclass.isAssignableFrom(subclass)){
-            return -1;
-        }
-        Class<? super Sub> stepclass;
-        if (superclass.equals(subclass)){
-            return distance;
-        }else{
-            distance++;
-            stepclass = subclass.getSuperclass();
-        }
-        while (!superclass.equals(stepclass)){
-            distance++;
-            stepclass = subclass.getSuperclass();
-        }
-        return distance;
-
-    }
-*/
-    /**
-     * Get the underlying class for a type, or null if the type is a variable type.
-     * @param type the type
-     * @return the underlying class
-     */
-    private static Class<?> getClass(Type type) {
-        if (type instanceof Class) {
-            return (Class) type;
-        }
-        else if (type instanceof ParameterizedType) {
-            return getClass(((ParameterizedType) type).getRawType());
-        }
-        else if (type instanceof GenericArrayType) {
-            Type componentType = ((GenericArrayType) type).getGenericComponentType();
-            Class<?> componentClass = getClass(componentType);
-            if (componentClass != null ) {
-                return Array.newInstance(componentClass, 0).getClass();
-            }
-            else {
-                return null;
-            }
-        }
-        else {
-            return null;
+            return convert(ce);
         }
     }
 
     /**
-     * Get the actual type arguments a child class has used to extend a generic base class.
+     * Get the actual type arguments a child class has used to extend a generic
+     * base class.
      *
-     * @param baseClass the base class
+     * @param baseClass  the base class
+     * @param <T>        the base class
      * @param childClass the child class
      * @return a list of the raw classes for the actual type arguments.
      */
     private static <T> List<Class<?>> getTypeArguments(
-            Class<T> baseClass,
-            Class<? extends T> childClass) {
+            Class<T> baseClass, Class<? extends T> childClass) {
         Map<Type, Type> resolvedTypes = new HashMap<Type, Type>();
         Type type = childClass;
 
         // start walking up the inheritance hierarchy until we hit baseClass.
-        // We know that there will be a way, due to the generic relations from the parameters
-        while (! baseClass.equals(getClass(type))) {
+        // We know that there will be a way, due to the generic relations from
+        // the parameters
+        while (!baseClass.equals(getClass(type))) {
             if (type instanceof Class) {
-                // there is no useful information for us in raw types, so just keep going.
+                // there is no useful information for us in raw types, so just
+                // keep going.
                 type = ((Class) type).getGenericSuperclass();
-
-            }
-            else {
+            } else {
                 ParameterizedType parameterizedType = (ParameterizedType) type;
                 Class<?> rawType = (Class) parameterizedType.getRawType();
-
-                Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
+                Type[] actualTypeArguments = parameterizedType
+                        .getActualTypeArguments();
                 TypeVariable<?>[] typeParameters = rawType.getTypeParameters();
                 for (int i = 0; i < actualTypeArguments.length; i++) {
-                    resolvedTypes.put(typeParameters[i], actualTypeArguments[i]);
+                    resolvedTypes
+                            .put(typeParameters[i], actualTypeArguments[i]);
                 }
 
                 if (!rawType.equals(baseClass)) {
@@ -181,23 +144,49 @@ public abstract class  ExceptionMapper <E1 extends Exception,E2 extends Exceptio
             }
         }
 
-        // finally, for each actual type argument provided to baseClass, determine (if possible)
-        // the raw class for that type argument.
+        // finally, for each actual type argument provided to baseClass,
+        // determine (if possible) the raw class for that type argument.
         Type[] actualTypeArguments;
         if (type instanceof Class) {
             actualTypeArguments = ((Class) type).getTypeParameters();
-        }
-        else {
-            actualTypeArguments = ((ParameterizedType) type).getActualTypeArguments();
+        } else {
+            actualTypeArguments = ((ParameterizedType) type)
+                    .getActualTypeArguments();
         }
         List<Class<?>> typeArgumentsAsClasses = new ArrayList<Class<?>>();
         // resolve types by chasing down type variables.
-        for (Type baseType: actualTypeArguments) {
+        for (Type baseType : actualTypeArguments) {
             while (resolvedTypes.containsKey(baseType)) {
                 baseType = resolvedTypes.get(baseType);
             }
             typeArgumentsAsClasses.add(getClass(baseType));
         }
         return typeArgumentsAsClasses;
+    }
+
+    /**
+     * Get the underlying class for a type, or null if the type is a variable
+     * type.
+     *
+     * @param type the type
+     * @return the underlying class
+     */
+    private static Class<?> getClass(Type type) {
+        if (type instanceof Class) {
+            return (Class) type;
+        } else if (type instanceof ParameterizedType) {
+            return getClass(((ParameterizedType) type).getRawType());
+        } else if (type instanceof GenericArrayType) {
+            Type componentType = ((GenericArrayType) type)
+                    .getGenericComponentType();
+            Class<?> componentClass = getClass(componentType);
+            if (componentClass != null) {
+                return Array.newInstance(componentClass, 0).getClass();
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
     }
 }

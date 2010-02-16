@@ -28,27 +28,40 @@
 package dk.statsbiblioteket.doms.webservices;
 
 /**
- * Created by IntelliJ IDEA.
- * User: abr
- * Date: Feb 15, 2010
- * Time: 2:42:20 PM
- * To change this template use File | Settings | File Templates.
+ * Tuple class for storing username and password.
  */
 public class Credentials {
-
+    /** User name */
     private String username;
 
+    /** Password */
     private String password;
 
+    /**
+     * Initialize values.
+     *
+     * @param username User name
+     * @param password Password
+     */
     public Credentials(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
+    /**
+     * Get user name.
+     *
+     * @return Get user name.
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Get password.
+     *
+     * @return The password.
+     */
     public String getPassword() {
         return password;
     }

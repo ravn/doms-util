@@ -35,14 +35,14 @@ import java.util.Properties;
  * various sources.
  */
 public class ConfigCollection {
-
-
-    private static Properties contextConfig;
+    /** Current configuration. */
+    private static Properties contextConfig = new Properties();
+    /**
+     * Last known servlet context.<p/>
+     * FIXME: Storing this statically probably makes no sense, and allows race
+     * conditions between various contexts.
+     */
     private static ServletContext servletContext;
-
-    static {
-        contextConfig = new Properties();
-    }
 
     /**
      * This method returns a join of the various property sources, so that the
@@ -50,19 +50,32 @@ public class ConfigCollection {
      *
      * @return the combined Properties
      */
-    public static synchronized Properties getProperties() {
-        //TODO do intelligent join of several Properties blocks
+    public static Properties getProperties() {
         return contextConfig;
     }
 
-    static synchronized void setContextConfig(Properties contextConfig) {
-        ConfigCollection.contextConfig = contextConfig;
+    /**
+     * Add configuration from a given context. If any values are already set in
+     * the configuration, they are overridden with the new values.
+     *
+     * @param contextConfig The configuration to add.
+     */
+    public static void addContextConfig(Properties contextConfig) {
+        ConfigCollection.contextConfig.putAll(contextConfig);
     }
 
+    /**
+     * Store the currently last known servlet context.
+     * @param servletContext The last known servlet context.
+     */
     public static void setServletContext(ServletContext servletContext) {
         ConfigCollection.servletContext = servletContext;
     }
 
+    /**
+     * Get the currently last known servlet context.
+     * @return The last known servlet context.
+     */
     public static ServletContext getServletContext() {
         return servletContext;
     }

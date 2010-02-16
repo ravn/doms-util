@@ -28,25 +28,25 @@
 package dk.statsbiblioteket.doms.webservices;
 
 /**
- * Created by IntelliJ IDEA.
- * User: abr
- * Date: Feb 15, 2010
- * Time: 2:49:26 PM
- * To change this template use File | Settings | File Templates.
+ * Exception thrown when no credentials are included with a request.
  */
 public class NoCredentialsException extends CredentialsException {
-    public NoCredentialsException() {
-    }
-
+    /**
+     * Report no credentials included.
+     * @param message Message when no credentials are included. Should include
+     * request.
+     */
     public NoCredentialsException(String message) {
         super(message);
     }
 
+    /**
+     * Report no credentials included.
+     * @param message Message when no credentials are included. Should include
+     * request.
+     * @param cause Exception that caused this.
+     */
     public NoCredentialsException(String message, Throwable cause) {
         super(message, cause);
-    }
-
-    public NoCredentialsException(Throwable cause) {
-        super(cause);
     }
 }
