@@ -148,7 +148,13 @@
                   </entry>
                   <entry key="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags">
                     <value>
-                      <list />
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1266307430149" />
+                          <option name="revision" value="241" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/Version%200.0.1" />
+                        </SvnBranchItem>
+                      </list>
                     </value>
                   </entry>
                 </map>
