@@ -273,26 +273,6 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/branches">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags">
-                    <value>
-                      <list>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1266307573368" />
-                          <option name="revision" value="242" />
-                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/Version%200.0.1" />
-                        </SvnBranchItem>
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="branchUrls">
                 <list>
                   <option value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/branches" />

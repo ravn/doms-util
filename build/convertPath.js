@@ -1,10 +1,10 @@
 /*
- * Doms build framework version 1.0.5
+ * Doms build framework version 1.0.7#SNAPSHOT
  *
- * $Id: convertPath.js 250 2010-02-16 11:36:52Z blekinge $
- * $Revision: 250 $
- * $Date: 2010-02-16 12:36:52 +0100 (Tue, 16 Feb 2010) $
- * $Author: blekinge $
+ * $Id$
+ * $Revision$
+ * $Date$
+ * $Author$
  *
  * The DOMS project.
  * Copyright (C) 2007-2010  The State and University Library
