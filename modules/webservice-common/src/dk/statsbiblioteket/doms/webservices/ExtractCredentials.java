@@ -27,6 +27,9 @@
 
 package dk.statsbiblioteket.doms.webservices;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
@@ -36,6 +39,11 @@ import java.io.IOException;
  * Utility class for extracting credentials from a web service context.
  */
 public class ExtractCredentials {
+
+
+    private static final Log log
+            = LogFactory.getLog(ExtractCredentials.class);
+
 
     /**
      * Extract credentials from a web service context.
