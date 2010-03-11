@@ -1,10 +1,10 @@
 <!--
-  ~ Doms build framework version 1.0.7#SNAPSHOT
+  ~ Doms build framework version 1.0.7
   ~
-  ~ $Id: build-webservice-module.xml 270 2010-02-18 13:23:35Z blekinge $
-  ~ $Revision: 270 $
-  ~ $Date: 2010-02-18 14:23:35 +0100 (Thu, 18 Feb 2010) $
-  ~ $Author: blekinge $
+  ~ $Id: build-webservice-module.xml 294 2010-02-24 14:39:44Z kchristiansen $
+  ~ $Revision: 294 $
+  ~ $Date: 2010-02-24 15:39:44 +0100 (Wed, 24 Feb 2010) $
+  ~ $Author: kchristiansen $
   ~
   ~ The DOMS project.
   ~ Copyright (C) 2007-2010  The State and University Library
@@ -28,16 +28,22 @@
   -->
 
 <project name="webservice">
-
     <import file="build-module.xml"/>
 
+    <property name="wsdl.dir" value="data/wsdl"/>
+
     <fileset id="webinf" dir="${basedir}/web/WEB-INF">
+    </fileset>
+
+    <fileset id="webcontent" dir="${basedir}/web">
+        <exclude name="WEB-INF/**"/>
     </fileset>
 
     <target name="war" depends="jar" unless="codeNotChanged">
         <buildwar jars.to.pack="classpath"
                   warfilename="${warfilename}"
                   web-inf="webinf"
+                  web-content="webcontent"
                   wsdl.dir="${wsdl.dir}"/>
         <delete file="dist/${jarfile}"/>
     </target>

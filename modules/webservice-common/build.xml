@@ -29,7 +29,7 @@
 
     <property name="global.dir" value="${basedir}/../../"/>
 
-    <!--Contain the normal build tasks, including war-->
+    <!-- Contain the normal build tasks -->
     <import file="${global.dir}/build/build-module.xml"/>
 
     <dirset id="build.project.libs" dir="${global.dir}/lib">

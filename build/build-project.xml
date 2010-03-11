@@ -1,5 +1,5 @@
 <!--
-  ~ Doms build framework version 1.0.7#SNAPSHOT
+  ~ Doms build framework version 1.0.7
   ~
   ~ $Id$
   ~ $Revision$
@@ -95,7 +95,6 @@
         <delete dir="temp/docstemp"/>
     </target>
 
-
     <target name="release.bin">
 
         <mkdir dir="dist"/>
@@ -163,6 +162,7 @@
         <delete dir="temp/wartemp"/>
 
     </target>
+
 
 
     <target name="release.src" depends="distclean">
