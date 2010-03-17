@@ -24,36 +24,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package dk.statsbiblioteket.doms.surveillance.status;
+
+package dk.statsbiblioteket.doms.domsutil.status;
 
 import dk.statsbiblioteket.util.qa.QAInfo;
 
-/** The interface of something that offers status messages for surveillance. */
+/** An exception that reports trouble when instantiating a Surveyable. */
 @QAInfo(author = "kfc",
         reviewers = "jrg",
+        comment = "",
         level = QAInfo.Level.NORMAL,
-        state = QAInfo.State.QA_OK)
-public interface Surveyable {
+        state = QAInfo.State.QA_NEEDED)
+public class SurveyableInstantiationException extends RuntimeException {
     /**
-     * Get all status messages newer than the given time.
-     * An application should use the newest timestamp in the given messages
-     * from the last call as input to this method next time it calls it, to
-     * ensure not losing messages.
+     * Initiate an exception for Surveyable instantiation.
      *
-     * @param time Only get messages strictly newer than this timestamp. The
-     * timestamp is measured in milliseconds since 1970-01-01 00:00:00.000Z.
-     * @return List of status messages. May be empty, but never null.
+     * @param message The message.
+     * @param cause The cause.
      */
-    public Status getStatusSince(long time);
-
-    /**
-     * Get all status messages. This behaves exactly like
-     * getMessagesSince().
-     *
-     * @return List of status messages. May be empty, but never null.
-     *
-     * @see #getStatusSince(long)
-     */
-    public Status getStatus();
-
+    public SurveyableInstantiationException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

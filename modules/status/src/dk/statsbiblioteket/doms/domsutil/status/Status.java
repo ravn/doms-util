@@ -24,7 +24,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package dk.statsbiblioteket.doms.surveillance.status;
+package dk.statsbiblioteket.doms.domsutil.status;
 
 import dk.statsbiblioteket.util.qa.QAInfo;
 
