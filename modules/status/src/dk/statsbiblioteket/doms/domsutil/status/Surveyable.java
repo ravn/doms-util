@@ -48,7 +48,7 @@ public interface Surveyable {
 
     /**
      * Get all status messages. This behaves exactly like
-     * getMessagesSince().
+     * getMessagesSince(0L).
      *
      * @return List of status messages. May be empty, but never null.
      *

@@ -29,35 +29,41 @@ package dk.statsbiblioteket.doms.domsutil.status;
 
 import dk.statsbiblioteket.util.qa.QAInfo;
 
+import java.util.Collections;
+
 @QAInfo(author = "kfc",
         reviewers = "jrg",
         comment = "",
         level = QAInfo.Level.NORMAL,
         state = QAInfo.State.QA_NEEDED)
+/**
+ * A surveyable instance that signals survey is not initialised.
+ */
 public class NoSurveyable implements Surveyable {
 
     /**
-     * Get all status messages newer than the given time.
-     * An application should use the newest timestamp in the given messages
-     * from the last call as input to this method next time it calls it, to
-     * ensure not losing messages.
+     * This implementation always returns a status that signals uninitialised
+     * configuration.
      *
-     * @param time Only get messages strictly newer than this timestamp. The
-     *             timestamp is measured in milliseconds since 1970-01-01 00:00:00.000Z.
-     * @return List of status messages. May be empty, but never null.
+     * @param time Ignored.
+     * @return A single status message reporting unintialised configuration.
      */
     public Status getStatusSince(long time) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return new Status("Unconfigured", Collections.singletonList(
+                new StatusMessage("Surveillance has not been configured",
+                                  StatusMessage.Severity.RED,
+                                  System.currentTimeMillis(), false)));
     }
 
     /**
      * Get all status messages. This behaves exactly like
-     * getMessagesSince().
+     * getMessagesSince(0L).
      *
      * @return List of status messages. May be empty, but never null.
+     *
      * @see #getStatusSince(long)
      */
     public Status getStatus() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return getStatusSince(0L);
     }
 }
