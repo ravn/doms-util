@@ -37,7 +37,7 @@ import dk.statsbiblioteket.util.qa.QAInfo;
 /** Factory for getting the surveyable singleton.
  * The choice of singleton is defined by configuration parameter
  * <code>dk.statsbiblioteket.doms.domsutil.status.surveyableClass</code>.
- * Default is dk.statsbiblioteket.doms.domsutil.status.NoSurveyable. */
+ * Default is dk.statsbiblioteket.doms.domsutil.status.SurveyableCombiner. */
 @QAInfo(author = "kfc",
         reviewers = "jrg",
         comment = "",
@@ -54,7 +54,7 @@ public class SurveyableFactory {
 
     /** Default implementation class. */
     private static final String DEFAULT_IMPLEMENTATION
-            = NoSurveyable.class.getName();
+            = SurveyableCombiner.class.getName();
 
     /** Logger for this class. */
     private static Log log = LogFactory.getLog(SurveyableFactory.class);
@@ -84,16 +84,33 @@ public class SurveyableFactory {
         }
         if ((surveyable == null)
                 || !surveyable.getClass().getName().equals(implementation)) {
-            log.info("Initializing surveyable class '" + implementation + "'");
-            try {
-                Class surveyableClass = Class.forName(implementation);
-                surveyable = (Surveyable) surveyableClass.newInstance();
-            } catch (Exception e) {
-                throw new SurveyableInstantiationException(
-                        "Cannot instantiate Surveyable class '"
-                        + implementation + "': " + e.getMessage(), e);
-            }
+            log.info("Initializing surveyable singleton '"
+                    + implementation + "'");
+            surveyable = createSurveyable(implementation);
         }
         return surveyable;
+    }
+
+    /**
+     * Create a surveyable instance. This will create an instance of a
+     * surveyable with the given classname, or throw an exception on any trouble
+     * doing so.
+     *
+     * @param implementation The classname of the implementation to initialize
+     * @return Surveyable instance.
+     *
+     * @throws SurveyableInstantiationException on trouble instantiating the
+     * surveyable.
+     */
+    public static Surveyable createSurveyable(String implementation) {
+        log.trace("Enter createSurveyable('" + implementation + "')"); 
+        try {
+            Class surveyableClass = Class.forName(implementation);
+            return (Surveyable) surveyableClass.newInstance();
+        } catch (Exception e) {
+            throw new SurveyableInstantiationException(
+                    "Cannot instantiate Surveyable class '"
+                    + implementation + "': " + e.getMessage(), e);
+        }
     }
 }

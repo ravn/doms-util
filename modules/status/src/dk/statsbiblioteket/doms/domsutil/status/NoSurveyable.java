@@ -31,15 +31,34 @@ import dk.statsbiblioteket.util.qa.QAInfo;
 
 import java.util.Collections;
 
+/**
+ * A surveyable instance that signals survey is not initialised.
+ */
 @QAInfo(author = "kfc",
         reviewers = "jrg",
         comment = "",
         level = QAInfo.Level.NORMAL,
         state = QAInfo.State.QA_NEEDED)
-/**
- * A surveyable instance that signals survey is not initialised.
- */
 public class NoSurveyable implements Surveyable {
+    /** The name of the unconfigured surveyable. */
+    private String name;
+
+    /** The default name of the unconfigured surveyable if none is given. */
+    private static final String DEFAULT_NAME = "Unconfigured";
+
+    /** Initialise an unconfigured surveyable with default name. */
+    public NoSurveyable() {
+        this.name = DEFAULT_NAME;
+    }
+
+    /**
+     * Initialise an unconfigured surveyable with given name.
+     *
+     * @param name The name of the surveyable.
+     */
+    public NoSurveyable(String name) {
+        this.name = name;
+    }
 
     /**
      * This implementation always returns a status that signals uninitialised
@@ -49,7 +68,7 @@ public class NoSurveyable implements Surveyable {
      * @return A single status message reporting unintialised configuration.
      */
     public Status getStatusSince(long time) {
-        return new Status("Unconfigured", Collections.singletonList(
+        return new Status(name, Collections.singletonList(
                 new StatusMessage("Surveillance has not been configured",
                                   StatusMessage.Severity.RED,
                                   System.currentTimeMillis(), false)));
