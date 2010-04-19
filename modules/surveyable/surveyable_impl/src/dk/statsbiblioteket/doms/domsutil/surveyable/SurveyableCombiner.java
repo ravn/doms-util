@@ -34,10 +34,12 @@ import dk.statsbiblioteket.doms.webservices.ConfigCollection;
 import dk.statsbiblioteket.util.qa.QAInfo;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -53,7 +55,7 @@ import java.util.TreeSet;
         level = QAInfo.Level.NORMAL)
 public class SurveyableCombiner implements Surveyable {
     /** List of surveyables to combine into one. */
-    private List<Surveyable> surveyables;
+    private final List<Surveyable> surveyables = new ArrayList<Surveyable>();
 
     /** Prefix for configuration parameters. */
     private static final String CONFIGURATION_PACKAGE_NAME
@@ -67,33 +69,98 @@ public class SurveyableCombiner implements Surveyable {
     private Log log = LogFactory.getLog(getClass());
 
     /**
-     * Read configuration for classes to survey, and initialise the classes, to
-     * expose them as one surveyable.
+     * Initialise surveyables.
      */
     public SurveyableCombiner() {
         log.trace("Enter SurveyableCombiner()");
+    }
+
+    /**
+     * Read configuration for classes to survey, and initialise the classes.
+     * This will reread the configuration on each call, and initialise any new
+     * classes, or any classes the failed to initialise during the last call.
+     * Classes that are no longer configured, will be removed from the list of
+     * surveyed classes. Errors in initialisation will be logged as errors only
+     * the first time the initialisation fails.
+     */
+    private synchronized void initializeSurveyables() {
+        log.trace("Enter initializeSurveyables()");
+
+        // Get set of classes from configuration
         Properties config = ConfigCollection.getProperties();
         String classes = config
                 .getProperty(CONFIGURATION_SURVEYABLES_PARAMETER);
-        if (classes != null && classes.trim().length() != 0) {
-            surveyables = new ArrayList<Surveyable>();
-            for (String classname : classes.split(";")) {
-                log.debug("Initialising class '" + classname
-                        + "' for surveillance");
-                Surveyable surveyable;
-                try {
-                    surveyable = SurveyableFactory.createSurveyable(classname);
-                } catch (Exception e) {
+        Set<String> configuredClasses = new HashSet<String>();
+        List<String> configuredClassesParameter
+                = Arrays.asList(classes.split(";"));
+        for (String configuredClass : configuredClassesParameter) {
+            configuredClasses.add(configuredClass.trim());
+        }
+        configuredClasses.remove("");
+        configuredClasses.remove(NoSurveyable.class.getName());
+
+        // Get set of classes initialised.
+        Set<String> surveyedClasses = new HashSet<String>();
+        for (Surveyable s : surveyables) {
+            surveyedClasses.add(s.getClass().getName());
+        }
+
+        // If configuration is empty, warn the first time and insert dummy
+        if (configuredClasses.size() == 0) {
+            if (!surveyedClasses.contains(NoSurveyable.class.getName())
+                    || (surveyedClasses.size() != 1)) {
+                log.warn("No classes specified for surveillance.");
+                surveyables.clear();
+                surveyables.add(new NoSurveyable());
+            }
+            return;
+        }
+
+        // Remove and remember dummies. Dummies are remembered in order to log
+        // errors only the first time initialisations failed.
+        Set<String> dummies = new HashSet<String>();
+        for (Surveyable s : surveyables) {
+            if (s.getClass().getName().equals(NoSurveyable.class.getName())) {
+                surveyables.remove(s);
+                dummies.add(s.getStatus().getName());
+            }
+        }
+        surveyedClasses.remove(NoSurveyable.class.getName());
+
+        // Initialise newly configured classes, or previously failed. Insert
+        // dummy on failure.
+        Set<String> newClassesToSurvey = new HashSet<String>(configuredClasses);
+        newClassesToSurvey.removeAll(surveyedClasses);
+        for (String classname : newClassesToSurvey) {
+            log.info("Initializing class '" + classname + "' for surveillance");
+            Surveyable surveyable;
+            try {
+                surveyable = SurveyableFactory.createSurveyable(classname);
+            } catch (Exception e) {
+                if (dummies.contains(classname)) {
+                    log.debug("Still unable to initialise class for"
+                            + " surveillance: '" + classname + "'", e);
+                } else {
                     log.error("Unable to initialise class for surveillance: '"
                             + classname + "'", e);
-                    surveyable = new NoSurveyable(classname);
                 }
-                surveyables.add(surveyable);
+                surveyable = new NoSurveyable(classname);
             }
-        } else {
-            log.warn("No classes specified for surveillance.");
-            surveyables = Collections
-                    .singletonList((Surveyable) new NoSurveyable());
+            surveyables.add(surveyable);
+        }
+
+        // Remove classes to no longer survey
+        Set<String> noLongerSurveyed = new HashSet<String>(surveyedClasses);
+        newClassesToSurvey.removeAll(configuredClasses);
+        for (String classname : noLongerSurveyed) {
+            log.debug("Removing class '" + classname + "' from surveillance");
+            for (Surveyable s : surveyables) {
+                if (s.getClass().getName().equals(classname)) {
+                    surveyables.remove(s);
+                    log.info("Removed class '" + classname
+                            + "' from surveillance");
+                }
+            }
         }
     }
 
@@ -117,26 +184,48 @@ public class SurveyableCombiner implements Surveyable {
     public Status getStatusSince(long time) {
         log.trace("Enter getStatusSince(" + time + ")");
 
+        try {
+            Status status = new Status();
+
+            initializeSurveyables();
+            if (surveyables == null || surveyables.size() == 0) {
+                return getConfigurationErrorStatus("");
+            }
+
+            SortedSet<StatusMessage> messages = new TreeSet<StatusMessage>(
+                    new StatusMessageComparator());
+            for (Surveyable surveyable : surveyables) {
+                messages.addAll(surveyable.getStatusSince(time).getMessages());
+            }
+            status.setName(surveyables.get(0).getStatus().getName());
+            status.getMessages().addAll(messages);
+            return status;
+        } catch (Exception e) {
+            return getConfigurationErrorStatus(": " + e);
+        }
+    }
+
+    /**
+     * Create status indicating configuration error.
+     *
+     * @param details Extra information to append to status message. Use empty
+     * string for no further details.
+     * @return A Status indicating configuration errors.
+     */
+    private Status getConfigurationErrorStatus(String details) {
+        log.trace("Enter getConfigurationErrorStatus('" + details + "')");
+
         StatusMessage statusMessage = new StatusMessage();
         Status status = new Status();
 
-        if (surveyables == null || surveyables.size() == 0) {
-            statusMessage.setLogMessage(false);
-            statusMessage.setTime(System.currentTimeMillis());
-            statusMessage.setSeverity(Severity.RED);
+        statusMessage.setMessage("Survey configuration error" + details);
+        statusMessage.setLogMessage(false);
+        statusMessage.setTime(System.currentTimeMillis());
+        statusMessage.setSeverity(Severity.RED);
 
-            status.setName("Survey configuration error");
-            status.getMessages().add(statusMessage);
+        status.setName("Survey configuration error");
+        status.getMessages().add(statusMessage);
 
-            return status;
-        }
-        SortedSet<StatusMessage> messages = new TreeSet<StatusMessage>(
-                new StatusMessageComparator());
-        for (Surveyable surveyable : surveyables) {
-            messages.addAll(surveyable.getStatusSince(time).getMessages());
-        }
-        status.setName(surveyables.get(0).getStatus().getName());
-        status.getMessages().addAll(messages);
         return status;
     }
 
