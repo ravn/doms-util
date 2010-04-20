@@ -1,10 +1,10 @@
 <!--
-  ~ Doms build framework version 1.0.7
+  ~ Doms build framework version 1.0.8
   ~
-  ~ $Id: build-webservice-module.xml 294 2010-02-24 14:39:44Z kchristiansen $
-  ~ $Revision: 294 $
-  ~ $Date: 2010-02-24 15:39:44 +0100 (Wed, 24 Feb 2010) $
-  ~ $Author: kchristiansen $
+  ~ $Id$
+  ~ $Revision$
+  ~ $Date$
+  ~ $Author$
   ~
   ~ The DOMS project.
   ~ Copyright (C) 2007-2010  The State and University Library
@@ -59,6 +59,6 @@
     <target name="all" depends="war,module.all"/>
 
     <!--All project libs are packed in the war, do not copy them-->
-    <target name="-copyLibsForDist" depends="-copyLicensesForDist"/>
+    <target name="_copyLibsForDist" depends="_copyLicensesForDist"/>
 
 </project>

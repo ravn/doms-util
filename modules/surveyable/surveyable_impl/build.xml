@@ -24,17 +24,11 @@
   ~ specific language governing permissions and limitations
   ~ under the License.
   -->
-
 <project name="surveyable_impl" basedir=".">
     <property name="global.dir" value="${basedir}/../../.."/>
-
     <property file="${global.dir}/build.properties"/>
 
-    <property name="warfilename" value="surveyable.war"/>
-    <property name="wsdl.dir"
-              value="${global.dir}/modules/surveyable/surveyable_interface/data/wsdl"/>
-
-    <import file="${global.dir}/build/build-webservice-module.xml"/>
+    <import file="${global.dir}/build/build-module.xml"/>
 
     <dirset id="module.dependencies" dir="${global.dir}/modules/">
         <include name="surveyable/surveyable_interface"/>
