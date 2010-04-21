@@ -1,5 +1,5 @@
 <!--
-  ~ Doms build framework version 1.0.8
+  ~ Doms build framework version 1.0.9
   ~
   ~ $Id$
   ~ $Revision$
@@ -71,7 +71,7 @@
 
     <target name="compile" depends="depends,compile.check"
             unless="codeNotChanged">
-        <echo message="Using doms buildframework version 1.0.6#SNAPSHOT"/>
+        <!--<echo message="Using doms buildframework version 1.0.6#SNAPSHOT"/>-->
         <!--This is the classpath calculation-->
         <convertPath dirset="module.libs"
                      postfix="/jars/*.jar"
