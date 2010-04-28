@@ -35,6 +35,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
@@ -66,10 +67,10 @@ public class SurveyableWebservice implements Surveyable {
                      targetNamespace = "http://surveyable.domsutil.doms.statsbiblioteket.dk/",
                      className = "dk.statsbiblioteket.doms.domsutil.surveyable.GetStatusSinceResponse")
     @GET
-    @Path("getStatusSince/{date}")
+    @Path("getStatusSince/{time}")
     @Produces("application/xml")
     public Status getStatusSince(
-            @WebParam(name = "arg0", targetNamespace = "") long time) {
+            @WebParam(name = "arg0", targetNamespace = "") @PathParam("{time}") long time) {
         return SurveyableFactory.getSurveyable().getStatusSince(time);
     }
 
