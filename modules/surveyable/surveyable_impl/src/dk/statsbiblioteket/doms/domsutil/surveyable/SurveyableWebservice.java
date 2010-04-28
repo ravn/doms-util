@@ -46,7 +46,7 @@ import javax.xml.ws.ResponseWrapper;
         state = QAInfo.State.QA_NEEDED,
         author = "jrg",
         reviewers = {"kfc"})
-@Path("/surveillance/")
+@Path("/")
 public class SurveyableWebservice implements Surveyable {
     /**
      * Get all status messages newer than the given time.

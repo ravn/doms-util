@@ -100,11 +100,14 @@ public class SurveyableCombiner implements Surveyable {
             Properties config = ConfigCollection.getProperties();
             String classes
                     = config.getProperty(CONFIGURATION_SURVEYABLES_PARAMETER);
-            List<String> configuredClassesParameter
-                    = Arrays.asList(classes.split(";"));
+            List<String> configuredClassesParameter;
             log.trace("Read configuration: '" + classes + ".");
 
             // Get set of classes from configuration
+            if (classes == null) {
+                classes = "";
+            }
+            configuredClassesParameter = Arrays.asList(classes.split(";"));
             for (String configuredClass : configuredClassesParameter) {
                 configuredClasses.add(configuredClass.trim());
             }
