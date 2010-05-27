@@ -70,7 +70,7 @@ public class SurveyableWebservice implements Surveyable {
     @Path("getStatusSince/{time}")
     @Produces("application/xml")
     public Status getStatusSince(
-            @WebParam(name = "arg0", targetNamespace = "") @PathParam("{time}") long time) {
+            @WebParam(name = "arg0", targetNamespace = "") @PathParam("time") long time) {
         return SurveyableFactory.getSurveyable().getStatusSince(time);
     }
 
