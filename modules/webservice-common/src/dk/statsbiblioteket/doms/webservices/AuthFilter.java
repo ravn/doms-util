@@ -53,8 +53,9 @@ public class AuthFilter implements Filter {
         if (request instanceof HttpServletRequest) {
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             if (httpServletRequest.getMethod().equals("GET")
-                && httpServletRequest.getPathInfo() == null
-                && httpServletRequest.getQueryString() == "?wsdl") {
+                && httpServletRequest.getPathInfo().equals("/")
+                && httpServletRequest.getQueryString() == "wsdl") {
+                //if the url was GET $WARFILENAME/$BINDING/?wsdl
                 //do not request credentials
             } else{
 
