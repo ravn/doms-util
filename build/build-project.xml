@@ -1,5 +1,5 @@
 <!--
-  ~ Doms build framework version 1.0.9
+  ~ Doms build framework version 1.0.9#SNAPSHOT
   ~
   ~ $Id$
   ~ $Revision$
@@ -154,7 +154,7 @@
             <fileset refid="project.modules.data"/>
             <regexpmapper from="(.*)/data(/.*)" to="\1\2"/>
         </copy>
-                              
+
 
 
         <zip destfile="dist/${dist.bin.zip}">
