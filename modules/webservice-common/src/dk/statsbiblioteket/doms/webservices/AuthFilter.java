@@ -54,6 +54,7 @@ public class AuthFilter implements Filter {
         if (request != null && request instanceof HttpServletRequest) {
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             if (httpServletRequest.getMethod().equals("GET")
+                && httpServletRequest.getPathInfo() != null
                 && httpServletRequest.getPathInfo().equals("/")
                 && httpServletRequest.getQueryString() != null
                 && (httpServletRequest.getQueryString().equals("wsdl")
