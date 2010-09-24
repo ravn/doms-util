@@ -50,10 +50,12 @@ public class AuthFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         //if Authenticate header already set
-        if (request instanceof HttpServletRequest) {
+
+        if (request != null && request instanceof HttpServletRequest) {
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             if (httpServletRequest.getMethod().equals("GET")
                 && httpServletRequest.getPathInfo().equals("/")
+                && httpServletRequest.getQueryString() != null
                 && (httpServletRequest.getQueryString().equals("wsdl")
                     || httpServletRequest.getQueryString().matches("^xsd=\\d+$"))) {
                 //if the url was GET $WARFILENAME/$BINDING/?wsdl
