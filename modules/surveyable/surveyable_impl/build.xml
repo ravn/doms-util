@@ -36,9 +36,10 @@
     </dirset>
 
     <!--Project libs used by this module-->
-    <dirset id="project.libs" dir="${global.dir}/lib/">
+    <dirset id="build.project.libs" dir="${global.dir}/lib/">
         <include name="${sbutils.lib}"/>
         <include name="${commons-logging.lib}"/>
         <include name="${jsr311.lib}"/>
+
     </dirset>
 </project>
