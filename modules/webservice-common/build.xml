@@ -34,13 +34,9 @@
 
     <dirset id="build.project.libs" dir="${global.dir}/lib">
         <include name="${servlet.lib}"/>
-    </dirset>
-
-    <dirset id="project.libs" dir="${global.dir}/lib">
         <include name="${sbutils.lib}"/>
         <include name="${commons-logging.lib}"/>
     </dirset>
-
 
 
 </project>
