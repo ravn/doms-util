@@ -8,7 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="surveyable_interface" />
-    <orderEntry type="library" name="sbutil-0.4.6" level="project" />
+    <orderEntry type="library" name="sbutil-0.5.2" level="project" />
     <orderEntry type="library" name="jsr311-api-1.0" level="project" />
     <orderEntry type="library" name="commons-logging-1.1.1" level="project" />
     <orderEntry type="module" module-name="webservice-common" />

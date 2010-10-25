@@ -322,17 +322,16 @@
       </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/lib/servlet-api-2.5-apache-tomcat-6.0.20/jars" recursive="false" />
     </library>
-    <library name="sbutil-0.4.6">
+    <library name="sbutil-0.5.2">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/sbutils-0.4.6/jars" />
+        <root url="jar://$PROJECT_DIR$/lib/sbutil-0.5.2/jars/sbutil-0.5.2.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/lib/sbutils-0.4.6/apidocs/sbutil-0.4.6-apidocs.zip!/sbutil-0.4.6" />
+        <root url="jar://$PROJECT_DIR$/lib/sbutil-0.5.2/apidocs/sbutil-0.5.2-apidocs.zip!/sbutil-0.5.2" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/sbutils-0.4.6/src/sbutil-0.4.6-src.zip!/sbutil-0.4.6/src" />
+        <root url="jar://$PROJECT_DIR$/lib/sbutil-0.5.2/src/sbutil-0.5.2-src.zip!/sbutil-0.5.2/src" />
       </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/sbutils-0.4.6/jars" recursive="false" />
     </library>
     <library name="commons-logging-1.1.1">
       <CLASSES>
