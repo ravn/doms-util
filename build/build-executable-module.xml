@@ -1,8 +1,10 @@
 <!--
-  ~ $Id$
-  ~ $Revision$
-  ~ $Date$
-  ~ $Author$
+  ~ Doms build framework version 1.0.12
+  ~
+  ~ $Id: build-executable-module.xml 908 2010-10-11 15:00:20Z blekinge $
+  ~ $Revision: 908 $
+  ~ $Date: 2010-10-11 17:00:20 +0200 (Mon, 11 Oct 2010) $
+  ~ $Author: blekinge $
   ~
   ~ The DOMS project.
   ~ Copyright (C) 2007-2010  The State and University Library
@@ -25,18 +27,18 @@
   ~ under the License.
   -->
 
-<project name="webservice-common" basedir=".">
+<project name="executable">
+    <import file="build-module.xml"/>
 
-    <property name="global.dir" value="${basedir}/../../"/>
-
-    <!-- Contain the normal build tasks -->
-    <import file="${global.dir}/build/build-module.xml"/>
-
-    <dirset id="build.project.libs" dir="${global.dir}/lib">
-        <include name="${servlet.lib}"/>
-        <include name="${sbutils.lib}"/>
-        <include name="${commons-logging.lib}"/>
-    </dirset>
+      <target name="executable" depends="jar">
+        <executablezip/>
+        <delete file="dist/${jarfile}"/>
+    </target>
 
 
+    <target name="all" depends="executable,module.all"/>
+
+    <target name="clean" depends="module.clean">
+        <delete dir="tempjars"/>
+    </target>
 </project>
