@@ -26,7 +26,8 @@
   -->
 
 <project name="surveillance-logappender" basedir=".">
-    <property name="global.dir" value="${basedir}/../.."/>
+    <property name="global.dir" value="${basedir}/../../.."/>
+    <property file="${global.dir}/build.properties"/>
 
     <!--Contain the normal build tasks, including jar-->
     <import file="${global.dir}/build/build-module.xml"/>
