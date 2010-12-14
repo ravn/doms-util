@@ -58,7 +58,7 @@ public class SurveyableWebservice implements Surveyable {
      *             timestamp is measured in milliseconds since 1970-01-01 00:00:00.000Z.
      * @return List of status messages. May be empty, but never null.
      */
-    @WebMethod
+    @WebMethod       
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getStatusSince",
                     targetNamespace = "http://surveyable.domsutil.doms.statsbiblioteket.dk/",

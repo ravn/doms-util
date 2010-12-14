@@ -263,6 +263,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/domsutil.iml" filepath="$PROJECT_DIR$/domsutil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/logappender/logappender.iml" filepath="$PROJECT_DIR$/modules/surveyable/logappender/logappender.iml" group="surveyable" />
       <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_impl/surveyable_impl.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_impl/surveyable_impl.iml" group="surveyable" />
       <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_interface/surveyable_interface.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_interface/surveyable_interface.iml" group="surveyable" />
       <module fileurl="file://$PROJECT_DIR$/modules/webservice-common/webservice-common.iml" filepath="$PROJECT_DIR$/modules/webservice-common/webservice-common.iml" />
@@ -356,6 +357,30 @@
         <root url="jar://$PROJECT_DIR$/lib/jsr311-api-1.0/src/jsr311-api-1.0-sources.jar!/" />
       </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/lib/jsr311-api-1.0/jars" recursive="false" />
+    </library>
+    <library name="log4j">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.15/jars/log4j-1.2.15.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.15/apidocs/log4j-1.2.15-apidocs.zip!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.15/src/log4j-1.2.15-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="logback">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/jars/logback-access-0.9.18.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/jars/logback-classic-0.9.18.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/jars/logback-core-0.9.18.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/src/logback-core-0.9.18-sources.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/src/logback-access-0.9.18-sources.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/src/logback-classic-0.9.18-sources.zip!/" />
+      </SOURCES>
     </library>
   </component>
 </project>
