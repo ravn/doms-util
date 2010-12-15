@@ -26,16 +26,17 @@
  */
 package dk.statsbiblioteket.doms.webservices.logging;
 
-import org.apache.log4j.xml.DOMConfigurator;
+import java.io.File;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
+
+import org.apache.log4j.xml.DOMConfigurator;
 
 /**
  * This servlet will look up the servlet init-param key called <code>
- * &quot;&lt;full package name of the package containing this servlet&gt;.&lt;the name of this servlet class&gt;.loglog4jConfigurationPropertyKey&quot;
+ * dk.statsbiblioteket.doms.webservices.logging.Log4JInitServlet.loglog4jConfigurationPropertyKey
  * </code> to obtain
  * the context-parameter key which has been assiged with the file path to an XML
  * log4j configuration (that is <b>not</b> a <code>.properties</code> file), and
@@ -53,7 +54,7 @@ import java.io.File;
  * 
  *         &lt;init-param&gt;
  *             &lt;param-name&gt;
- *                 &quot;the cannonical class name of Log4JInitServlet&quot;.log4jConfigurationPropertyKey
+ *                 dk.statsbiblioteket.doms.webservices.logging.Log4JInitServlet.loglog4jConfigurationPropertyKey
  *             &lt;/param-name&gt;
  *             &lt;param-value&gt;
  *                 context-param key name of your choice. E.g. something like: &quot;fully qualified package name of your web application&quot;.log4jConfigurationFilePath
@@ -113,14 +114,17 @@ public class Log4JInitServlet extends HttpServlet {
 
         } catch (RuntimeException runtimeException) {
 
+            final String configurationFilePath = (configFile == null) ? null
+                    : configFile.getAbsolutePath();
+
             log(className + ".init(): Failed configuring log4j. The "
                     + "configuration file path context parameter key specified"
                     + " by the '" + log4jConfigurationPropertyKey
                     + "' init-parameter key was: '" + log4jConfigurationPathKey
                     + "' and the configuration file path specified by that "
                     + "was: '" + log4jconfigPath + "'. Actual file path used "
-                    + "for configuration loading: "
-                    + configFile.getAbsolutePath(), runtimeException);
+                    + "for configuration loading: " + configurationFilePath,
+                    runtimeException);
         }
     }
 
