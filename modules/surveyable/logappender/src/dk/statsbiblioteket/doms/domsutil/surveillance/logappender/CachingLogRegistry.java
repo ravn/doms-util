@@ -55,20 +55,22 @@ import java.util.TreeMap;
         state = QAInfo.State.QA_NEEDED)
 public class CachingLogRegistry implements LogRegistry {
     /** At most this many log messages are kept in the registry. */
-    private int maxNumberOfMessagesKeptByLog
+    private static int maxNumberOfMessagesKeptByLog
             = DEFAULT_MAX_NUMBER_OF_MESSAGES_KEPT_BY_LOG;
 
     /** Datastructure for remembered log messages. Maps from name to collection
      *  of messages. The collections of messages are organised as a sorted map
      *  from timestamp to message. */
-    private NavigableMap<Long, Collection<StatusMessage>>
+    private static final NavigableMap<Long, Collection<StatusMessage>>
             logStatusMessages
             = new                           TreeMap<Long, Collection<StatusMessage>>();
 
+    private static final Object lock = new Object();
+    private static boolean configured = false;
 
     /** The logger for this class. */
-    private Log log = LogFactory.getLog(getClass());
-    private String name;
+    private static Log log = LogFactory.getLog(CachingLogRegistry.class);
+    private static String name;
 
     /** Read paramters from configuration, and initialize caching log
      * registry. */
@@ -79,22 +81,29 @@ public class CachingLogRegistry implements LogRegistry {
 
     /** Read configuration. This method acts as fault barrier */
     private void configure() {
-        log.trace("Enter configure()");
-        try {
-            String configValue = ConfigCollection.getProperties()
-                    .getProperty(NUMBEROFMESSAGES_CONFIGURATION_PARAMETER);
-            if (configValue != null && !configValue.equals("")) {
-                int configIntValue = Integer.parseInt(configValue);
-                if (configIntValue != maxNumberOfMessagesKeptByLog) {
-                    maxNumberOfMessagesKeptByLog = configIntValue;
-                    log.info("Setting number of messages kept by registry to "
-                             + maxNumberOfMessagesKeptByLog);
+        synchronized (lock){
+            log.trace("Enter configure()");
+            try {
+                if (!configured){
+                    String configValue = ConfigCollection.getProperties()
+                            .getProperty(NUMBEROFMESSAGES_CONFIGURATION_PARAMETER);
+                    if (configValue != null && !configValue.equals("")) {
+                        int configIntValue = Integer.parseInt(configValue);
+                        if (configIntValue != maxNumberOfMessagesKeptByLog) {
+                            maxNumberOfMessagesKeptByLog = configIntValue;
+                            log.info("Setting number of messages kept by registry to "
+                                     + maxNumberOfMessagesKeptByLog);
+                        }
+                    }
+                    configured = true;
                 }
+            } catch (Exception e) {
+                log.warn("Error while configuring appender."
+                         + " Falling back to default values.", e);
             }
-        } catch (Exception e) {
-            log.warn("Error while configuring appender."
-                     + " Falling back to default values.", e);
+
         }
+
     }
 
     /**
@@ -104,33 +113,35 @@ public class CachingLogRegistry implements LogRegistry {
      *
      * @throws IllegalArgumentException if appender or event is null.
      */
-    public synchronized void registerMessage(
+    public  void registerMessage(
             LoggingEvent event) {
-        Collection<StatusMessage> collection;
-        if (name != null){
-            name = event.getLoggerName();
-        }
-        // Check parameters
-        if (event == null) {
-            throw new IllegalArgumentException(
-                    "Parameter event must not be null");
-        }
+        synchronized (lock){
+            Collection<StatusMessage> collection;
+            // Check parameters
+            if (event == null) {
+                throw new IllegalArgumentException(
+                        "Parameter event must not be null");
+            }
+            if (name == null){
+                name = event.getLoggerName();
+            }
 
 
 
-        // Ensure the log doesn't grow too huge
-        if (logStatusMessages.size() > maxNumberOfMessagesKeptByLog - 1) {
-            long earliestTimeStamp = logStatusMessages.firstKey();
-            logStatusMessages.remove(earliestTimeStamp);
-        }
+            // Ensure the log doesn't grow too huge
+            if (logStatusMessages.size() > maxNumberOfMessagesKeptByLog - 1) {
+                long earliestTimeStamp = logStatusMessages.firstKey();
+                logStatusMessages.remove(earliestTimeStamp);
+            }
 
-        // Register it
-        collection = logStatusMessages.get(event.getTimeStamp());
-        if (collection == null) {
-            collection = new ArrayList<StatusMessage>();
-            logStatusMessages.put(event.getTimeStamp(), collection);
+            // Register it
+            collection = logStatusMessages.get(event.getTimeStamp());
+            if (collection == null) {
+                collection = new ArrayList<StatusMessage>();
+                logStatusMessages.put(event.getTimeStamp(), collection);
+            }
+            collection.add(new LogStatusMessage(event));
         }
-        collection.add(new LogStatusMessage(event));
     }
 
     /**
@@ -142,33 +153,35 @@ public class CachingLogRegistry implements LogRegistry {
      */
     public synchronized void registerMessage(
             ILoggingEvent event) {
-        Collection<StatusMessage> collection;
+        synchronized (lock){
+            Collection<StatusMessage> collection;
 
-        // Check parameters
-        if (event == null) {
-            throw new IllegalArgumentException(
-                    "Parameter event must not be null");
+            // Check parameters
+            if (event == null) {
+                throw new IllegalArgumentException(
+                        "Parameter event must not be null");
+            }
+            if (name == null){
+                name = event.getLoggerName();
+            }
+
+
+
+
+            // Ensure the log doesn't grow too huge
+            if (logStatusMessages.size() > maxNumberOfMessagesKeptByLog - 1) {
+                long earliestTimeStamp = logStatusMessages.firstKey();
+                logStatusMessages.remove(earliestTimeStamp);
+            }
+
+            // Register it
+            collection = logStatusMessages.get(event.getTimeStamp());
+            if (collection == null) {
+                collection = new ArrayList<StatusMessage>();
+                logStatusMessages.put(event.getTimeStamp(), collection);
+            }
+            collection.add(new LogStatusMessage(event));
         }
-        if (name != null){
-            name = event.getLoggerName();
-        }
-
-
-
-
-        // Ensure the log doesn't grow too huge
-        if (logStatusMessages.size() > maxNumberOfMessagesKeptByLog - 1) {
-            long earliestTimeStamp = logStatusMessages.firstKey();
-            logStatusMessages.remove(earliestTimeStamp);
-        }
-
-        // Register it
-        collection = logStatusMessages.get(event.getTimeStamp());
-        if (collection == null) {
-            collection = new ArrayList<StatusMessage>();
-            logStatusMessages.put(event.getTimeStamp(), collection);
-        }
-        collection.add(new LogStatusMessage(event));
     }
 
 
@@ -181,20 +194,22 @@ public class CachingLogRegistry implements LogRegistry {
      * @param time Only messages strictly after the given date are returned.
      * @return A status containing list of log messages.
      */
-    public synchronized Status getStatusSince(long time) {
-        log.trace("Enter getStatusSince(" + time + ")");
-        Collection<Collection<StatusMessage>> listCollection
-                = logStatusMessages.subMap(
-                time, false, Long.MAX_VALUE, true).values();
-        Collection<StatusMessage> statusMessages
-                = new ArrayList<StatusMessage>();
-        for (Collection<StatusMessage> collection : listCollection) {
-            statusMessages.addAll(collection);
+    public Status getStatusSince(long time) {
+        synchronized (lock){
+            log.trace("Enter getStatusSince(" + time + ")");
+            Collection<Collection<StatusMessage>> listCollection
+                    = logStatusMessages.subMap(
+                    time, false, Long.MAX_VALUE, true).values();
+            Collection<StatusMessage> statusMessages
+                    = new ArrayList<StatusMessage>();
+            for (Collection<StatusMessage> collection : listCollection) {
+                statusMessages.addAll(collection);
+            }
+            Status status = new Status();
+            status.setName(name);
+            status.getMessages().addAll(statusMessages);
+            return status;
         }
-        Status status = new Status();
-        status.setName(name);
-        status.getMessages().addAll(statusMessages);
-        return status;
     }
 
     /**
@@ -202,9 +217,11 @@ public class CachingLogRegistry implements LogRegistry {
      *
      * @return A status containing list of log messages.
      */
-    public synchronized Status getStatus() {
-        log.trace("Enter getStatus()");
-        return getStatusSince(0l);
+    public Status getStatus() {
+        synchronized (lock){
+            log.trace("Enter getStatus()");
+            return getStatusSince(0l);
+        }
     }
 }
 
