@@ -24,7 +24,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package dk.statsbiblioteket.doms.iprolemapper.servlets;
+package dk.statsbiblioteket.doms.webservices;
 
 import java.io.File;
 
