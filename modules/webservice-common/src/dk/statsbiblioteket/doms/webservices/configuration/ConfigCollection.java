@@ -25,7 +25,7 @@
  * under the License.
  */
 
-package dk.statsbiblioteket.doms.webservices;
+package dk.statsbiblioteket.doms.webservices.configuration;
 
 import javax.servlet.ServletContext;
 import java.util.Properties;

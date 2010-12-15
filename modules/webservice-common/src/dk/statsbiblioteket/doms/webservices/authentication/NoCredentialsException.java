@@ -25,7 +25,7 @@
  * under the License.
  */
 
-package dk.statsbiblioteket.doms.webservices;
+package dk.statsbiblioteket.doms.webservices.authentication;
 
 /**
  * Exception thrown when no credentials are included with a request.

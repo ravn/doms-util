@@ -25,7 +25,7 @@
  * under the License.
  */
 
-package dk.statsbiblioteket.doms.webservices;
+package dk.statsbiblioteket.doms.webservices.configuration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -37,7 +37,7 @@ import java.util.Properties;
  * This listener retrieves the list of context params from the web.xml
  * and adds them to the ConfigCollection
  *
- * @see dk.statsbiblioteket.doms.webservices.ConfigCollection
+ * @see ConfigCollection
  */
 public class ConfigContextListener implements ServletContextListener {
 

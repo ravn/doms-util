@@ -25,7 +25,7 @@
  * under the License.
  */
 
-package dk.statsbiblioteket.doms.webservices;
+package dk.statsbiblioteket.doms.webservices.authentication;
 
 /**
  * Exception for trouble extracting credentials.

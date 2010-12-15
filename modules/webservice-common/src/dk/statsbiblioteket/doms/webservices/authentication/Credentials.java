@@ -25,7 +25,7 @@
  * under the License.
  */
 
-package dk.statsbiblioteket.doms.webservices;
+package dk.statsbiblioteket.doms.webservices.authentication;
 
 /**
  * Tuple class for storing username and password.

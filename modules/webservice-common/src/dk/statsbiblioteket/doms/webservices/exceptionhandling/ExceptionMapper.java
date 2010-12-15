@@ -25,7 +25,7 @@
  * under the License.
  */
 
-package dk.statsbiblioteket.doms.webservices.exceptions;
+package dk.statsbiblioteket.doms.webservices.exceptionhandling;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.GenericArrayType;

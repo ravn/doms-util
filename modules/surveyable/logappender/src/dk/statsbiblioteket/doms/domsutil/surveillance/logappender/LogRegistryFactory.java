@@ -30,7 +30,7 @@ package dk.statsbiblioteket.doms.domsutil.surveillance.logappender;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import dk.statsbiblioteket.doms.webservices.ConfigCollection;
+import dk.statsbiblioteket.doms.webservices.configuration.ConfigCollection;
 import dk.statsbiblioteket.util.qa.QAInfo;
 
 /** Factory for getting the log registry singleton.

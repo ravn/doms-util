@@ -25,7 +25,7 @@
  * under the License.
  */
 
-package dk.statsbiblioteket.doms.webservices;
+package dk.statsbiblioteket.doms.webservices.authentication;
 
 /**
  * <p>Encodes and decodes to and from Base64 notation.</p>
