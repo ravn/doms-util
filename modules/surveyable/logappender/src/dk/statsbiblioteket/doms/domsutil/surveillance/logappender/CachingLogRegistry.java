@@ -63,7 +63,7 @@ public class CachingLogRegistry implements LogRegistry {
      *  from timestamp to message. */
     private static final NavigableMap<Long, Collection<StatusMessage>>
             logStatusMessages
-            = new                           TreeMap<Long, Collection<StatusMessage>>();
+            = new TreeMap<Long, Collection<StatusMessage>>();
 
     private static final Object lock = new Object();
     private static boolean configured = false;

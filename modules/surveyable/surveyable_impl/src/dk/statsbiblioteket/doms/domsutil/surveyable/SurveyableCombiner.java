@@ -217,10 +217,17 @@ public class SurveyableCombiner implements Surveyable {
                 }
 
                 for (Surveyable surveyable : surveyables) {
-                    messages.addAll(
-                            surveyable.getStatusSince(time).getMessages());
+                    Status result = surveyable.getStatusSince(time);
+                    messages.addAll(result.getMessages());
+                    if (status.getName() == null){
+                        if (result.getName() != null){
+                            status.setName(result.getName());
+                        }
+                    }
                 }
-                status.setName(surveyables.get(0).getStatus().getName());
+                if (status.getName()==null){
+                    status.setName("Unnamed");
+                }
             }
             status.getMessages().addAll(messages);
             return status;
