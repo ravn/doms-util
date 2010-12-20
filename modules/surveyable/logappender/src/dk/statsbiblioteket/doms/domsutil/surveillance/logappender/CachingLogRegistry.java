@@ -68,7 +68,7 @@ public class CachingLogRegistry implements LogRegistry {
     private static final Object lock = new Object();
     private static boolean configured = false;
 
-    /** The logger for this class. */
+    /** The loggetr for this class. */
     private static Log log = LogFactory.getLog(CachingLogRegistry.class);
     private static String name;
 
@@ -95,6 +95,7 @@ public class CachingLogRegistry implements LogRegistry {
                                      + maxNumberOfMessagesKeptByLog);
                         }
                     }
+                    name = ConfigCollection.getProperties().getProperty(LOGGERNAME_CONFIGURATION_PARAMETER,"Unnamed");
                     configured = true;
                 }
             } catch (Exception e) {
@@ -121,9 +122,6 @@ public class CachingLogRegistry implements LogRegistry {
             if (event == null) {
                 throw new IllegalArgumentException(
                         "Parameter event must not be null");
-            }
-            if (name == null){
-                name = event.getLoggerName();
             }
 
 
@@ -160,9 +158,6 @@ public class CachingLogRegistry implements LogRegistry {
             if (event == null) {
                 throw new IllegalArgumentException(
                         "Parameter event must not be null");
-            }
-            if (name == null){
-                name = event.getLoggerName();
             }
 
 
