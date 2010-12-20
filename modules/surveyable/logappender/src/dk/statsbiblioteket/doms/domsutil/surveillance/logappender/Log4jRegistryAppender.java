@@ -63,7 +63,7 @@ public class Log4jRegistryAppender extends AppenderSkeleton {
      *
      * @param maxNumberOfMessages Max number of messages to store in cache.
      */
-    private void setMaxNumberOfMessages(int maxNumberOfMessages) {
+    private void setNumberOfMessages(int maxNumberOfMessages) {
         Properties p = new Properties();
         p.setProperty(LogRegistry.NUMBEROFMESSAGES_CONFIGURATION_PARAMETER,
                       Integer.toString(maxNumberOfMessages));
@@ -78,7 +78,7 @@ public class Log4jRegistryAppender extends AppenderSkeleton {
      *
      * @return Max number of messages. 0 if not initialized.
      */
-    private int getMaxNumberOfMessages() {
+    private int getNumberOfMessages() {
         return maxNumberOfMessages;
     }
 

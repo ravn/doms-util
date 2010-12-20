@@ -44,11 +44,14 @@ import dk.statsbiblioteket.util.qa.QAInfo;
         state = QAInfo.State.QA_NEEDED)
 public interface LogRegistry extends Surveyable{
     /** The package prefix for parameter names. */
-    String CONFIGURATION_PACKAGE_NAME
+    final String CONFIGURATION_PACKAGE_NAME
             = "dk.statsbiblioteket.doms.surveillance.logappender";
     /** Parameter for now many log messages are kept in the registry. */
-    String NUMBEROFMESSAGES_CONFIGURATION_PARAMETER
+    final String NUMBEROFMESSAGES_CONFIGURATION_PARAMETER
             = CONFIGURATION_PACKAGE_NAME + ".numberOfMessages";
+    final String LOGGERNAME_CONFIGURATION_PARAMETER
+                = CONFIGURATION_PACKAGE_NAME + ".LoggerName";
+
     /** At most this many log messages are by default kept in the registry. */
     int DEFAULT_MAX_NUMBER_OF_MESSAGES_KEPT_BY_LOG = 1000;
 
