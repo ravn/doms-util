@@ -68,7 +68,7 @@ public class CachingLogRegistry implements LogRegistry {
     private static final Object lock = new Object();
     private static boolean configured = false;
 
-    /** The logger for this class. */
+    /** The loggetr for this class. */
     private static Log log = LogFactory.getLog(CachingLogRegistry.class);
     private static String name;
 
