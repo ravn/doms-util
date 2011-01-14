@@ -143,8 +143,22 @@
         <sequential>
             <mkdir dir="dist"/>
 
+            <tstamp>
+                <format property="NOW" pattern="yyyyMMddHHmmss"/>
+            </tstamp>
+            <loadSVNproperties/>
+            
             <jar destfile="dist/@{jarfile}"
-                 basedir="classes"/>
+                 basedir="classes">
+                <manifest>
+                    <attribute name="Title" value="@{jarfile}"/>
+                    <attribute name="Built-by" value="${user.name}"/>
+                    <attribute name="Version" value="${version}"/>
+                    <attribute name="Svn-revision" value="${svn.Revision}"/>
+                    <attribute name="Svn-url" value="${svn.URL}"/>
+                   <attribute name="Build-date" value="${NOW}"/>
+                </manifest>
+            </jar>
         </sequential>
     </macrodef>
 
@@ -247,13 +261,12 @@
                 <webinf dir="@{wsdl.dir}" prefix="WEB-INF/wsdl"
                         erroronmissingdir="false"/>
                 <manifest>
-
-                        <attribute name="Title" value="@{warfilename}"/>
-                        <attribute name="Built-by" value="${user.name}"/>
-                        <attribute name="Version" value="${version}"/>
-                        <attribute name="Svn-revision" value="${svn.Revision}"/>
-                        <attribute name="Build-date" value="${NOW}"/>
-
+                    <attribute name="Title" value="@{jarfile}"/>
+                    <attribute name="Built-by" value="${user.name}"/>
+                    <attribute name="Version" value="${version}"/>
+                    <attribute name="Svn-revision" value="${svn.Revision}"/>
+                    <attribute name="Svn-url" value="${svn.URL}"/>
+                   <attribute name="Build-date" value="${NOW}"/>
                 </manifest>
             </war>
             <delete dir="libtemp"/>
