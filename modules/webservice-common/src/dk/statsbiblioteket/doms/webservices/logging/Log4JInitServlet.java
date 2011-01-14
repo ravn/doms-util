@@ -26,13 +26,12 @@
  */
 package dk.statsbiblioteket.doms.webservices.logging;
 
-import java.io.File;
+import org.apache.log4j.xml.DOMConfigurator;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.xml.DOMConfigurator;
+import java.io.File;
 
 /**
  * This servlet will look up the servlet init-param key called <code>
