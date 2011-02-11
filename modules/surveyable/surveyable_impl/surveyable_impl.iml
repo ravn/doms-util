@@ -12,7 +12,7 @@
     <orderEntry type="library" name="sbutil-0.5.2" level="project" />
     <orderEntry type="library" name="jsr311-api-1.0" level="project" />
     <orderEntry type="library" name="commons-logging-1.1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.ws.rs:jsr311-api:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.ws.rs:jsr311-api:1.0" level="project" />
     <orderEntry type="module" module-name="webservice-common" />
     <orderEntry type="library" name="Maven: dk.statsbiblioteket.sbutil:sbutil:0.5.2" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />

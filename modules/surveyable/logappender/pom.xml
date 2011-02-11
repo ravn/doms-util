@@ -62,12 +62,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
+            <groupId>${groupId}</groupId>
             <artifactId>domsutil-webservice-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
+            <groupId>${groupId}</groupId>
             <artifactId>domsutil-surveyable_interface</artifactId>
             <version>${project.version}</version>
         </dependency>

@@ -51,11 +51,9 @@
                             <goal>wsimport</goal>
                         </goals>
                         <configuration>
-                            <wsdlDirectory>${basedir}/data/wsdl</wsdlDirectory>
+                            <wsdlDirectory>src/main/resources/wsdl</wsdlDirectory>
                             <packageName>${groupId}.surveyable</packageName>
-                            <sourceDestDir>tempsrc</sourceDestDir>
                             <verbose>true</verbose>
-                            <xdebug>true</xdebug>
                         </configuration>
                     </execution>
                 </executions>
