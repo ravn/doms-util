@@ -33,26 +33,27 @@
 
     <parent>
         <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
-        <artifactId>surveyable</artifactId>
+        <artifactId>domsutil-surveyable</artifactId>
         <version>0.0.17</version>
     </parent>
 
 
-    <artifactId>surveyable_impl</artifactId>
+    <artifactId>domsutil-surveyable_impl</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>jsr311-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
-            <artifactId>webservice-common</artifactId>
+            <artifactId>domsutil-webservice-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
-            <artifactId>surveyable_interface</artifactId>
+            <artifactId>domsutil-surveyable_interface</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

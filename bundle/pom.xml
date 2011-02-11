@@ -38,28 +38,28 @@
     </parent>
 
 
-    <artifactId>bundle</artifactId>
+    <artifactId>domsutil-bundle</artifactId>
     <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>logappender</artifactId>
+            <artifactId>domsutil-logappender</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>surveyable_impl</artifactId>
+            <artifactId>domsutil-surveyable_impl</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>surveyable_interface</artifactId>
+            <artifactId>domsutil-surveyable_interface</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>webservice-common</artifactId>
+            <artifactId>domsutil-webservice-common</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

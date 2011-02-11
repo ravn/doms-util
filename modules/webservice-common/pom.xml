@@ -38,18 +38,20 @@
     </parent>
 
 
-    <artifactId>webservice-common</artifactId>
+    <artifactId>domsutil-webservice-common</artifactId>
 
 
     <dependencies>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

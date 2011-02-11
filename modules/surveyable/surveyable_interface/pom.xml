@@ -33,12 +33,12 @@
 
     <parent>
         <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
-        <artifactId>surveyable</artifactId>
+        <artifactId>domsutil-surveyable</artifactId>
         <version>0.0.17</version>
     </parent>
 
 
-    <artifactId>surveyable_interface</artifactId>
+    <artifactId>domsutil-surveyable_interface</artifactId>
 
     <build>
         <plugins>

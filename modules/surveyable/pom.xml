@@ -38,7 +38,7 @@
     </parent>
 
 
-    <artifactId>surveyable</artifactId>
+    <artifactId>domsutil-surveyable</artifactId>
     <packaging>pom</packaging>
 
     <modules>
