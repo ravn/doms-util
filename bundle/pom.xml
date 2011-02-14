@@ -37,28 +37,29 @@
 
 
     <artifactId>domsutil-bundle</artifactId>
+    <version>0.0.20-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>${groupId}</groupId>
+            <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
             <artifactId>domsutil-logappender</artifactId>
-            <version>${project.version}</version>
+            <version>0.0.20-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>domsutil-surveyable_impl</artifactId>
-            <version>${project.version}</version>
+            <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
+            <artifactId>domsutil-surveyable-impl</artifactId>
+            <version>0.0.20-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>domsutil-surveyable_interface</artifactId>
-            <version>${project.version}</version>
+            <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
+            <artifactId>domsutil-surveyable-interface</artifactId>
+            <version>0.0.20-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>${groupId}</groupId>
+            <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
             <artifactId>domsutil-webservice-common</artifactId>
-            <version>${project.version}</version>
+            <version>0.0.20-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
