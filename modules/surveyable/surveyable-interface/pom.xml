@@ -32,12 +32,12 @@
     <parent>
         <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
         <artifactId>domsutil</artifactId>
-        <version>0.0.20-SNAPSHOT</version>
+        <version>0.0.20</version>
     </parent>
 
     <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
     <artifactId>domsutil-surveyable-interface</artifactId>
-    <version>0.0.20-SNAPSHOT</version>
+    <version>0.0.20</version>
 
     <build>
         <plugins>
