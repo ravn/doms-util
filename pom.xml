@@ -51,7 +51,9 @@
 
     <modules>
         <module>modules/webservice-common</module>
-        <module>modules/surveyable</module>
+        <module>modules/surveyable/logappender</module>
+        <module>modules/surveyable/surveyable-impl</module>
+        <module>modules/surveyable/surveyable-interface</module>
         <module>bundle</module>
     </modules>
 

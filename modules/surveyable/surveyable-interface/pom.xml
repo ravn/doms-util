@@ -31,12 +31,13 @@
 
     <parent>
         <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
-        <artifactId>domsutil-surveyable</artifactId>
+        <artifactId>domsutil</artifactId>
         <version>0.0.20-SNAPSHOT</version>
     </parent>
 
-
-    <artifactId>domsutil-surveyable_interface</artifactId>
+    <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
+    <artifactId>domsutil-surveyable-interface</artifactId>
+    <version>0.0.20-SNAPSHOT</version>
 
     <build>
         <plugins>
@@ -50,7 +51,8 @@
                         </goals>
                         <configuration>
                             <wsdlDirectory>src/main/resources/wsdl</wsdlDirectory>
-                            <packageName>${groupId}.surveyable</packageName>
+                            <packageName>${groupId}</packageName>
+                            <sourceDestDir>src/main/java</sourceDestDir>
                             <verbose>true</verbose>
                         </configuration>
                     </execution>

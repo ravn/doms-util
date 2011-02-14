@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AntConfiguration">
-    <defaultAnt bundledAnt="true" />
-  </component>
-  <component name="BuildJarProjectSettings">
-    <option name="BUILD_JARS_ON_MAKE" value="false" />
-  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
@@ -26,30 +20,58 @@
     </wildcardResourcePatterns>
     <annotationProcessing enabled="false" useClasspath="true" />
   </component>
-  <component name="CopyrightManager" default="Apache 2.0">
-    <copyright>
-      <option name="notice" value="&amp;#36;Id&amp;#36;&#10;&amp;#36;Revision&amp;#36;&#10;&amp;#36;Date&amp;#36;&#10;&amp;#36;Author&amp;#36;&#10;&#10;The DOMS project.&#10;Copyright (C) 2007-&amp;#36;today.year  The State and University Library&#10;&#10;Licensed to the Apache Software Foundation (ASF) under one&#10;or more contributor license agreements.  See the NOTICE file&#10;distributed with this work for additional information&#10;regarding copyright ownership.  The ASF licenses this file&#10;to you under the Apache License, Version 2.0 (the&#10;&quot;License&quot;); you may not use this file except in compliance&#10;with the License.  You may obtain a copy of the License at&#10;&#10;http://www.apache.org/licenses/LICENSE-2.0&#10;&#10;Unless required by applicable law or agreed to in writing,&#10;software distributed under the License is distributed on an&#10;&quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY&#10;KIND, either express or implied.  See the License for the&#10;specific language governing permissions and limitations&#10;under the License." />
-      <option name="keyword" value="Copyright" />
-      <option name="allowReplaceKeyword" value="" />
-      <option name="myName" value="Apache 2.0" />
-      <option name="myLocal" value="true" />
-    </copyright>
+  <component name="CopyrightManager" default="">
     <module2copyright />
+  </component>
+  <component name="CoverageDataManager" choice="3" />
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
   </component>
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
-  </component>
-  <component name="EclipseCompilerSettings">
-    <option name="GENERATE_NO_WARNINGS" value="true" />
-    <option name="DEPRECATION" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-  <component name="IdProvider" IDEtalkID="94676E3A21B3B3602BA0365DA7AF69B5" />
   <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_STRING" value="-target 1.4" />
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-target 1.6" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
@@ -74,6 +96,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="Palette2">
     <group name="Swing">
@@ -196,47 +222,124 @@
       </item>
     </group>
   </component>
-  <component name="ProjectDetails">
-    <option name="projectName" value="domsutil" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
   </component>
-  <component name="ProjectDictionaryState">
-    <dictionary name="abr">
-      <words>
-        <w>domsutil</w>
-        <w>javax</w>
-        <w>logback</w>
-        <w>sbutil</w>
-        <w>surveyable</w>
-      </words>
-    </dictionary>
-  </component>
-  <component name="ProjectKey">
-    <option name="state" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/trunk/domsutil.ipr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bundle/bundle.iml" filepath="$PROJECT_DIR$/bundle/bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/domsutil.iml" filepath="$PROJECT_DIR$/domsutil.iml" />
-      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/logappender/logappender.iml" filepath="$PROJECT_DIR$/modules/surveyable/logappender/logappender.iml" group="surveyable" />
-      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable.iml" />
-      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_impl/surveyable_impl.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_impl/surveyable_impl.iml" group="surveyable" />
-      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_interface/surveyable_interface.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_interface/surveyable_interface.iml" group="surveyable" />
-      <module fileurl="file://$PROJECT_DIR$/modules/webservice-common/webservice-common.iml" filepath="$PROJECT_DIR$/modules/webservice-common/webservice-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bundle/domsutil-bundle.iml" filepath="$PROJECT_DIR$/bundle/domsutil-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/logappender/domsutil-logappender.iml" filepath="$PROJECT_DIR$/modules/surveyable/logappender/domsutil-logappender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_interface/domsutil-surveyable-interface.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_interface/domsutil-surveyable-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_impl/domsutil-surveyable_impl.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_impl/domsutil-surveyable_impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/webservice-common/domsutil-webservice-common.iml" filepath="$PROJECT_DIR$/modules/webservice-common/domsutil-webservice-common.iml" />
     </modules>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+    <output url="file://$PROJECT_DIR$/classes" />
   </component>
-  <component name="ResourceManagerContainer">
-    <option name="myResourceBundles">
-      <value>
-        <list size="0" />
-      </value>
-    </option>
+  <component name="RunManager">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <list size="0" />
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
   </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
@@ -271,59 +374,26 @@
     </option>
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
-    <library name="commons-logging-1.1.1">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/commons-logging-1.1.1/jars" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1/apidocs/commons-logging-1.1.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1/src/commons-logging-1.1.1-sources.jar!/" />
-      </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/commons-logging-1.1.1/jars" recursive="false" />
-    </library>
-    <library name="jsr311-api-1.0">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/jsr311-api-1.0/jars" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/lib/jsr311-api-1.0/apidocs/jsr311-api-1.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/jsr311-api-1.0/src/jsr311-api-1.0-sources.jar!/" />
-      </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/jsr311-api-1.0/jars" recursive="false" />
-    </library>
-    <library name="log4j">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/apache-log4j-1.2.16/jars/log4j-1.2.16.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="file://$PROJECT_DIR$/lib/apache-log4j-1.2.16/apidocs" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/apache-log4j-1.2.16/src/src.zip!/main/java" />
-      </SOURCES>
-    </library>
-    <library name="logback">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/jars/logback-access-0.9.18.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/jars/logback-classic-0.9.18.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/jars/logback-core-0.9.18.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/src/logback-core-0.9.18-sources.zip!/" />
-        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/src/logback-access-0.9.18-sources.zip!/" />
-        <root url="jar://$PROJECT_DIR$/lib/logback-0.9.18/src/logback-classic-0.9.18-sources.zip!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: ch.qos.logback:logback-access:0.9.18">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-access/0.9.18/logback-access-0.9.18.jar!/" />
@@ -366,6 +436,19 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: dk.statsbiblioteket.doms.domsutil:domsutil-surveyable_interface:0.0.20-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/dk/statsbiblioteket/doms/domsutil/domsutil-surveyable_interface/0.0.20-SNAPSHOT/domsutil-surveyable_interface-0.0.20-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/modules/surveyable/surveyable_interface/pom-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/dk/statsbiblioteket/doms/domsutil/domsutil-surveyable_interface/0.0.20-SNAPSHOT/domsutil-surveyable_interface-0.0.20-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/modules/surveyable/surveyable_interface/pom-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/dk/statsbiblioteket/doms/domsutil/domsutil-surveyable_interface/0.0.20-SNAPSHOT/domsutil-surveyable_interface-0.0.20-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: dk.statsbiblioteket.sbutil:sbutil:0.5.2">
@@ -423,29 +506,48 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="sbutil-0.5.2">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/sbutil-0.5.2/jars/sbutil-0.5.2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/lib/sbutil-0.5.2/apidocs/sbutil-0.5.2-apidocs.zip!/sbutil-0.5.2" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/sbutil-0.5.2/src/sbutil-0.5.2-src.zip!/sbutil-0.5.2/src" />
-      </SOURCES>
-    </library>
-    <library name="servlet-api-2.5-apache-tomcat-6.0.20">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/servlet-api-2.5-apache-tomcat-6.0.20/jars" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/lib/servlet-api-2.5-apache-tomcat-6.0.20/apidocs/servlet-api-2.5-apache-tomcat-6.0.20-apidocs.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/servlet-api-2.5-apache-tomcat-6.0.20/src/servlet-api-2.5-apache-tomcat-6.0.20-src.zip!/" />
-      </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/servlet-api-2.5-apache-tomcat-6.0.20/jars" recursive="false" />
-    </library>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
