@@ -243,6 +243,7 @@
       <module fileurl="file://$PROJECT_DIR$/bundle/domsutil-bundle.iml" filepath="$PROJECT_DIR$/bundle/domsutil-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/surveyable/logappender/domsutil-logappender.iml" filepath="$PROJECT_DIR$/modules/surveyable/logappender/domsutil-logappender.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_interface/domsutil-surveyable-interface.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_interface/domsutil-surveyable-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable-impl/domsutil-surveyable_impl.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable-impl/domsutil-surveyable_impl.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/webservice-common/domsutil-webservice-common.iml" filepath="$PROJECT_DIR$/modules/webservice-common/domsutil-webservice-common.iml" />
     </modules>
   </component>
@@ -354,7 +355,103 @@
                   </entry>
                   <entry key="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags">
                     <value>
-                      <list />
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1297699271884" />
+                          <option name="revision" value="1624" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/domsutil-0.0.19" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1297698932989" />
+                          <option name="revision" value="1621" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/domsutil-0.0.18" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1297698667503" />
+                          <option name="revision" value="1618" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/domsutil-0.0.17" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1295032406392" />
+                          <option name="revision" value="1533" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.17" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1294930477303" />
+                          <option name="revision" value="1476" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.15" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1292863054925" />
+                          <option name="revision" value="1403" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.14" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1292854962162" />
+                          <option name="revision" value="1394" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.13" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1292425425843" />
+                          <option name="revision" value="1355" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.12" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1288004532693" />
+                          <option name="revision" value="1073" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.11" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1287132818988" />
+                          <option name="revision" value="959" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.10" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1285326682605" />
+                          <option name="revision" value="755" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.9" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1283937826870" />
+                          <option name="revision" value="600" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.8" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1282212833996" />
+                          <option name="revision" value="516" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/0.0.7" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1272461125854" />
+                          <option name="revision" value="445" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.6" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1272442571318" />
+                          <option name="revision" value="432" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/version-0.0.5" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1272380433028" />
+                          <option name="revision" value="422" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/version-0.0.4" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1271836545414" />
+                          <option name="revision" value="386" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1271668054292" />
+                          <option name="revision" value="375" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/release-0.0.2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1266307573368" />
+                          <option name="revision" value="242" />
+                          <option name="url" value="https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/Version%200.0.1" />
+                        </SvnBranchItem>
+                      </list>
                     </value>
                   </entry>
                 </map>
@@ -470,6 +567,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.ws.rs:jsr311-api:1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: log4j:log4j:1.2.16">
