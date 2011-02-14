@@ -37,7 +37,7 @@
 
 
     <artifactId>domsutil-webservice-common</artifactId>
-
+    <version>0.0.20-SNAPSHOT</version>
 
     <dependencies>
         <dependency>

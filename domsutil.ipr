@@ -243,7 +243,6 @@
       <module fileurl="file://$PROJECT_DIR$/bundle/domsutil-bundle.iml" filepath="$PROJECT_DIR$/bundle/domsutil-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/surveyable/logappender/domsutil-logappender.iml" filepath="$PROJECT_DIR$/modules/surveyable/logappender/domsutil-logappender.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_interface/domsutil-surveyable-interface.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_interface/domsutil-surveyable-interface.iml" />
-      <module fileurl="file://$PROJECT_DIR$/modules/surveyable/surveyable_impl/domsutil-surveyable_impl.iml" filepath="$PROJECT_DIR$/modules/surveyable/surveyable_impl/domsutil-surveyable_impl.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules/webservice-common/domsutil-webservice-common.iml" filepath="$PROJECT_DIR$/modules/webservice-common/domsutil-webservice-common.iml" />
     </modules>
   </component>
@@ -471,17 +470,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: javax.ws.rs:jsr311-api:1.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: log4j:log4j:1.2.16">
