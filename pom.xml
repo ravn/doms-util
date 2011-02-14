@@ -36,16 +36,16 @@
 
     <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
     <artifactId>domsutil</artifactId>
-    <version>0.0.18</version>
+    <version>0.0.19-SNAPSHOT</version>
     <name>DomsUtil project</name>
 
 
     <packaging>pom</packaging>
 
   <scm>
-    <connection>scm:svn:https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/domsutil-0.0.18</connection>
-    <developerConnection>scm:svn:https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/domsutil-0.0.18</developerConnection>
-    <url>http://doms.svn.sourceforge.net/viewvc/doms/domsutil/tags/domsutil-0.0.18</url>
+    <connection>scm:svn:https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/domsutil-0.0.17</connection>
+    <developerConnection>scm:svn:https://doms.svn.sourceforge.net/svnroot/doms/domsutil/tags/domsutil-0.0.17</developerConnection>
+    <url>http://doms.svn.sourceforge.net/viewvc/doms/domsutil/tags/domsutil-0.0.17</url>
   </scm>
 
 
