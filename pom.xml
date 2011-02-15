@@ -36,7 +36,7 @@
 
     <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
     <artifactId>domsutil</artifactId>
-    <version>0.0.21-SNAPSHOT</version>
+    <version>0.0.20-SNAPSHOT</version>
     <name>DomsUtil project</name>
 
 
