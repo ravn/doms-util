@@ -31,7 +31,7 @@
     <parent>
         <groupId>dk.statsbiblioteket.doms</groupId>
         <artifactId>doms</artifactId>
-        <version>0.1.0</version>
+        <version>0.1.1</version>
     </parent>
 
     <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
@@ -50,10 +50,10 @@
 
 
     <modules>
+        <module>modules/surveyable/surveyable-interface</module>
         <module>modules/webservice-common</module>
         <module>modules/surveyable/logappender</module>
         <module>modules/surveyable/surveyable-impl</module>
-        <module>modules/surveyable/surveyable-interface</module>
         <module>bundle</module>
     </modules>
 
