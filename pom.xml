@@ -43,9 +43,9 @@
     <packaging>pom</packaging>
 
   <scm>
-    <connection>scm:svn:https://doms.svn.sourceforge.net/svnroot/doms/domsutil/trunk</connection>
-    <developerConnection>scm:svn:https://doms.svn.sourceforge.net/svnroot/doms/domsutil/trunk</developerConnection>
-    <url>http://doms.svn.sourceforge.net/viewvc/doms/domsutil/trunk</url>
+        <connection>scm:git:git://github.com/statsbiblioteket/doms-util.git</connection>
+        <developerConnection>scm:git:git@github.com:statsbiblioteket/doms-util.git</developerConnection>
+        <url>https://github.com/statsbiblioteket/doms-util</url>
   </scm>
 
 
