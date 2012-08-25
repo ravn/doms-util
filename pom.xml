@@ -50,10 +50,10 @@
 
 
     <modules>
-        <module>modules/surveyable/surveyable-interface</module>
-        <module>modules/webservice-common</module>
-        <module>modules/surveyable/logappender</module>
-        <module>modules/surveyable/surveyable-impl</module>
+        <module>surveyable-interface</module>
+        <module>webservice-common</module>
+        <module>logappender</module>
+        <module>surveyable-impl</module>
         <module>bundle</module>
     </modules>
 
