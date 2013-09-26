@@ -30,6 +30,10 @@ package dk.statsbiblioteket.doms.webservices.authentication;
 /**
  * Exception thrown when no credentials are included with a request.
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class NoCredentialsException extends CredentialsException {
     /**
      * Report no credentials included.

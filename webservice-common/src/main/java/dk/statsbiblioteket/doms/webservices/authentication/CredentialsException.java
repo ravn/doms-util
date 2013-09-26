@@ -30,6 +30,10 @@ package dk.statsbiblioteket.doms.webservices.authentication;
 /**
  * Exception for trouble extracting credentials.
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class CredentialsException extends Exception {
     /**
      * Report exception extracting credentials.

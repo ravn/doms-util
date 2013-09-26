@@ -45,6 +45,10 @@ import java.util.Map;
  * @param <E1> Exception type to map to.
  * @param <E2> Exception type to map from.
  */
+/**
+ * @deprecated This is nasty. Do not use it
+ */
+@Deprecated
 public abstract class ExceptionMapper<E1 extends Exception, E2 extends Exception> {
     /**
      * Map an exception of type E2 to an exception of type E1. Implementations

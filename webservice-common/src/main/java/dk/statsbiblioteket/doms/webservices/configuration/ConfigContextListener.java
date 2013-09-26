@@ -39,6 +39,10 @@ import java.util.Properties;
  *
  * @see ConfigCollection
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class ConfigContextListener implements ServletContextListener {
 
     /**

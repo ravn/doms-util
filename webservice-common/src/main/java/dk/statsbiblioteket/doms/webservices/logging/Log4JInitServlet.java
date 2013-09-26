@@ -71,6 +71,10 @@ import java.io.File;
  * 
  * @author Thomas Skou Hansen &lt;tsh@statsbiblioteket.dk&gt;
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class Log4JInitServlet extends HttpServlet {
 
     private static final long serialVersionUID = 4530169251282101347L;

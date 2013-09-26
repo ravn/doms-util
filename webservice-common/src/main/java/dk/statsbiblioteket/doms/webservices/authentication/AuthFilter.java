@@ -37,6 +37,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class AuthFilter implements Filter {
 
     private FilterConfig filterConfig;

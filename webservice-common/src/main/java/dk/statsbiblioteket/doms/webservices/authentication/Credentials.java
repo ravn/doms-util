@@ -30,6 +30,10 @@ package dk.statsbiblioteket.doms.webservices.authentication;
 /**
  * Tuple class for storing username and password.
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class Credentials {
     /** User name */
     private String username;

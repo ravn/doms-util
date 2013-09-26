@@ -38,6 +38,10 @@ import java.io.IOException;
 /**
  * Utility class for extracting credentials from a web service context.
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class ExtractCredentials {
 
 

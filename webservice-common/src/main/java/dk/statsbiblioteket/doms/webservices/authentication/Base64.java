@@ -174,6 +174,10 @@ package dk.statsbiblioteket.doms.webservices.authentication;
  * @author rob@iharder.net
  * @version 2.3.7
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class Base64 {
 
 /* ********  P U B L I C   F I E L D S  ******** */

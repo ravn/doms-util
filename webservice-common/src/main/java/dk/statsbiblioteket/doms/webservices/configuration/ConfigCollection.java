@@ -34,6 +34,10 @@ import java.util.Properties;
  * This is the static class that is meant to hold the configuration from the
  * various sources.
  */
+/**
+ * @deprecated Moved to sbutils
+ */
+@Deprecated
 public class ConfigCollection {
     /** Current configuration. */
     private static Properties contextConfig = new Properties();
