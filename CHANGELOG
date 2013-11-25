@@ -1,0 +1,6 @@
+2013-11-25 1.0
+Use 1.0 doms parent pom
+Renamed folders to match maven module names
+migrate projects to git: Update pom.xml to reflect the new scm paths.
+
+2011/2/23  0.0.20
