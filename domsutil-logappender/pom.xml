@@ -32,12 +32,12 @@
     <parent>
         <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
         <artifactId>domsutil</artifactId>
-        <version>0.0.21-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
     <artifactId>domsutil-logappender</artifactId>
-    <version>0.0.21-SNAPSHOT</version>
+    <version>1.0</version>
 
     <dependencies>
         <dependency>
@@ -63,12 +63,12 @@
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
             <artifactId>domsutil-webservice-common</artifactId>
-            <version>0.0.21-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
             <artifactId>domsutil-surveyable-interface</artifactId>
-            <version>0.0.21-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
