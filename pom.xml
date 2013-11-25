@@ -50,11 +50,11 @@
 
 
     <modules>
-        <module>surveyable-interface</module>
-        <module>webservice-common</module>
-        <module>logappender</module>
-        <module>surveyable-impl</module>
-        <module>bundle</module>
+        <module>domsutil-surveyable-interface</module>
+        <module>domsutil-webservice-common</module>
+        <module>domsutil-logappender</module>
+        <module>domsutil-surveyable-impl</module>
+        <module>domsutil-bundle</module>
     </modules>
 
     <dependencyManagement>
