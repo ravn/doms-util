@@ -27,11 +27,10 @@
 
 package dk.statsbiblioteket.doms.domsutil.surveillance.logappender;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import dk.statsbiblioteket.doms.webservices.configuration.ConfigCollection;
 import dk.statsbiblioteket.util.qa.QAInfo;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /** Factory for getting the log registry singleton.
  * The choice of singleton is defined by configuration parameter

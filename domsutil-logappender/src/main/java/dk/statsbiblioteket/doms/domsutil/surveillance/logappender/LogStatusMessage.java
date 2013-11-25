@@ -28,12 +28,11 @@
 package dk.statsbiblioteket.doms.domsutil.surveillance.logappender;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
-import org.apache.log4j.Level;
-import org.apache.log4j.spi.LoggingEvent;
-
 import dk.statsbiblioteket.doms.domsutil.surveyable.Severity;
 import dk.statsbiblioteket.doms.domsutil.surveyable.StatusMessage;
 import dk.statsbiblioteket.util.qa.QAInfo;
+import org.apache.log4j.Level;
+import org.apache.log4j.spi.LoggingEvent;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

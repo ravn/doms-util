@@ -27,10 +27,9 @@
 
 package dk.statsbiblioteket.doms.domsutil.surveyable;
 
+import dk.statsbiblioteket.util.qa.QAInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import dk.statsbiblioteket.util.qa.QAInfo;
 
 /**
  * A surveyable instance that signals survey is not initialised.

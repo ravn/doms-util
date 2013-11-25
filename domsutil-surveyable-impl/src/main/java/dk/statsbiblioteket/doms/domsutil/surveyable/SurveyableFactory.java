@@ -27,11 +27,10 @@
 
 package dk.statsbiblioteket.doms.domsutil.surveyable;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import dk.statsbiblioteket.doms.webservices.configuration.ConfigCollection;
 import dk.statsbiblioteket.util.qa.QAInfo;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 
 /** Factory for getting the surveyable singleton.
