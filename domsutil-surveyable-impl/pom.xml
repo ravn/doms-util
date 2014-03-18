@@ -37,13 +37,16 @@
 
     <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
     <artifactId>domsutil-surveyable-impl</artifactId>
-    <version>1.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>jsr311-api</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>dk.statsbiblioteket.sbutil</groupId>
+            <artifactId>sbutil-webservices-common</artifactId>
         </dependency>
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
@@ -53,7 +56,7 @@
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
             <artifactId>domsutil-surveyable-interface</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

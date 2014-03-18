@@ -31,7 +31,7 @@
     <parent>
         <groupId>dk.statsbiblioteket.doms</groupId>
         <artifactId>doms</artifactId>
-        <version>1.0</version>
+        <version>1.2-SNAPSHOT</version>
     </parent>
 
     <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
@@ -59,6 +59,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>dk.statsbiblioteket.sbutil</groupId>
+                <artifactId>sbutil-webservices-common</artifactId>
+                <version>0.5.29</version>
+            </dependency>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>

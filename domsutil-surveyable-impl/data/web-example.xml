@@ -33,7 +33,7 @@
          version="2.5">
     <listener>
         <listener-class>
-            dk.statsbiblioteket.doms.webservices.configuration.ConfigContextListener
+            dk.statsbiblioteket.sbutil.webservices.configuration.ConfigContextListener
         </listener-class>
     </listener>
 

@@ -37,7 +37,6 @@
 
     <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
     <artifactId>domsutil-logappender</artifactId>
-    <version>1.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
@@ -61,14 +60,18 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>dk.statsbiblioteket.sbutil</groupId>
+            <artifactId>sbutil-webservices-common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
             <artifactId>domsutil-webservice-common</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
             <artifactId>domsutil-surveyable-interface</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
