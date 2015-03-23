@@ -27,7 +27,7 @@
 
 package dk.statsbiblioteket.doms.domsutil.surveyable;
 
-import dk.statsbiblioteket.doms.webservices.configuration.ConfigCollection;
+import dk.statsbiblioteket.sbutil.webservices.configuration.ConfigCollection;
 import dk.statsbiblioteket.util.qa.QAInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

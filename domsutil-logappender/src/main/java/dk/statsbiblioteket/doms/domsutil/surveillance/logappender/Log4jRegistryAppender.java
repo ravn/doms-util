@@ -27,7 +27,7 @@
 
 package dk.statsbiblioteket.doms.domsutil.surveillance.logappender;
 
-import dk.statsbiblioteket.doms.webservices.configuration.ConfigCollection;
+import dk.statsbiblioteket.sbutil.webservices.configuration.ConfigCollection;
 import dk.statsbiblioteket.util.qa.QAInfo;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;

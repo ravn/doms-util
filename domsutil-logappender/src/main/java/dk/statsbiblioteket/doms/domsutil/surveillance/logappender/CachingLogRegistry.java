@@ -30,7 +30,7 @@ package dk.statsbiblioteket.doms.domsutil.surveillance.logappender;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import dk.statsbiblioteket.doms.domsutil.surveyable.Status;
 import dk.statsbiblioteket.doms.domsutil.surveyable.StatusMessage;
-import dk.statsbiblioteket.doms.webservices.configuration.ConfigCollection;
+import dk.statsbiblioteket.sbutil.webservices.configuration.ConfigCollection;
 import dk.statsbiblioteket.util.qa.QAInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
