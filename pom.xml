@@ -51,10 +51,8 @@
 
     <modules>
         <module>domsutil-surveyable-interface</module>
-        <module>domsutil-webservice-common</module>
         <module>domsutil-logappender</module>
         <module>domsutil-surveyable-impl</module>
-        <module>domsutil-bundle</module>
     </modules>
 
     <dependencyManagement>
