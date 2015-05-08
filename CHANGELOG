@@ -1,3 +1,8 @@
+2015-05-08 1.1
+Remove deprecated doms-util-webservices module, it is moved to sbutil
+Remove doms-util-bundle, use the individual modules instead
+Use newest version of doms-util
+
 2013-11-25 1.0
 Use 1.0 doms parent pom
 Renamed folders to match maven module names
