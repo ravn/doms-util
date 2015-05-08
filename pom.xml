@@ -31,12 +31,12 @@
     <parent>
         <groupId>dk.statsbiblioteket.doms</groupId>
         <artifactId>doms</artifactId>
-        <version>1.2-SNAPSHOT</version>
+        <version>1.2</version>
     </parent>
 
     <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
     <artifactId>domsutil</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <name>DomsUtil project</name>
 
 
@@ -46,6 +46,7 @@
         <connection>scm:git:git://github.com/statsbiblioteket/doms-util.git</connection>
         <developerConnection>scm:git:git@github.com:statsbiblioteket/doms-util.git</developerConnection>
         <url>https://github.com/statsbiblioteket/doms-util</url>
+    <tag>domsutil-1.1</tag>
   </scm>
 
 
