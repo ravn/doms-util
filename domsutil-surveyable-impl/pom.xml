@@ -49,9 +49,8 @@
             <artifactId>sbutil-webservices-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
-            <artifactId>domsutil-webservice-common</artifactId>
-            <version>${project.version}</version>
+            <groupId>dk.statsbiblioteket.sbutil</groupId>
+            <artifactId>sbutil-qa</artifactId>
         </dependency>
         <dependency>
             <groupId>dk.statsbiblioteket.doms.domsutil.surveyable</groupId>
