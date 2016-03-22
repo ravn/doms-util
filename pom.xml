@@ -29,12 +29,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>dk.statsbiblioteket.doms</groupId>
+        <groupId>dk.statsbiblioteket.doms.repo.https_3A_2F_2Fgithub_2Ecom_2Fravn_2Fdoms_2Dparent_2Egit</groupId>
         <artifactId>doms</artifactId>
         <version>1.0</version>
     </parent>
 
-    <groupId>dk.statsbiblioteket.doms.domsutil</groupId>
+    <groupId>dk.statsbiblioteket.doms.domsutil.repo.https_3A_2F_2Fgithub_2Ecom_2Fravn_2Fdoms_2Dutil_2Egit</groupId>
     <artifactId>domsutil</artifactId>
     <version>1.0</version>
     <name>DomsUtil project</name>
